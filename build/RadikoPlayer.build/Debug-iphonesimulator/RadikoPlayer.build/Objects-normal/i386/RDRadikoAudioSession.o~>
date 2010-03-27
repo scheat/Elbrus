@@ -1,0 +1,2 @@
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioSession.m:92: warning: property 'delegate' requires method '-delegate' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioSession.m:92: warning: property 'delegate' requires the method 'setDelegate:' to be defined - use @synthesize, @dynamic or provide a method implementation

@@ -1,0 +1,156 @@
+In file included from /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:9:
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.h:21: error: 'kNumAQBufs' undeclared here (not in a function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.h:21: error: instance variable 'audioQueueBuffer' has unknown size
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.h:22: error: 'kAQMaxPacketDescs' undeclared here (not in a function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.h:22: error: instance variable 'packetDescs' has unknown size
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:10:33: error: RDRadikoAudioSession.h: No such file or directory
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:36: error: expected specifier-qualifier-list before 'AudioStreamerState'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function 'MyPropertyListenerProc':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:95: warning: 'RDRadikoAudioControl' may not respond to '-handlePropertyChangeForFileStream:fileStreamPropertyID:ioFlags:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:95: warning: (Messages without a matching method signature
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:95: warning: will be assumed to return 'id' and accept
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:95: warning: '...' as arguments.)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function 'MyPacketsProc':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:110: warning: 'RDRadikoAudioControl' may not respond to '-handleAudioPackets:numberBytes:numberPackets:packetDescriptions:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function 'MyAudioQueueIsRunningCallback':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:130: error: 'inClientData' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:130: error: (Each undeclared identifier is reported only once
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:130: error: for each function it appears in.)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: At top level:
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:149: error: no declaration of property 'state' found in the interface
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:150: error: no declaration of property 'bitRate' found in the interface
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl isFinishing]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:181: error: 'errorCode' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:181: error: 'AS_NO_ERROR' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:181: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:181: error: 'AS_INITIALIZED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:182: error: 'AS_STOPPING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:182: error: 'AS_STOPPED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:183: error: 'stopReason' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:183: error: 'AS_STOPPING_TEMPORARILY' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl runLoopShouldExit]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:197: error: 'errorCode' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:197: error: 'AS_NO_ERROR' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:198: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:198: error: 'AS_STOPPED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:199: error: 'stopReason' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:199: error: 'AS_STOPPING_TEMPORARILY' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl isPlaying]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:211: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:211: error: 'AS_PLAYING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl isPaused]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:222: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:222: error: 'AS_PAUSED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl isWaiting]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:236: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:236: error: 'AS_STARTING_FILE_THREAD' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:237: error: 'AS_WAITING_FOR_DATA' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:238: error: 'AS_WAITING_FOR_QUEUE_TO_START' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:239: error: 'AS_BUFFERING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl isIdle]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:251: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:251: error: 'AS_INITIALIZED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl openFileStream]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:266: error: 'stream' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:266: error: 'audioFileStream' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl processOfStreaming]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:302: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:302: error: 'AS_STARTING_FILE_THREAD' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:304: error: 'AS_STOPPING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:305: error: 'AS_STOPPED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:309: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:309: error: 'AS_INITIALIZED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:317: error: 'error' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:325: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:325: error: 'AS_WAITING_FOR_DATA' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:328: warning: implicit declaration of function 'pthread_mutex_init'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:328: error: 'queueBuffersMutex' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:329: warning: implicit declaration of function 'pthread_cond_init'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:329: error: 'queueBufferReadyCondition' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:352: error: 'buffersUsed' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:352: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:352: error: 'AS_PLAYING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:354: error: 'err' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:354: error: 'audioQueue' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:357: error: 'AS_AUDIO_QUEUE_PAUSE_FAILED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:357: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:360: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:360: error: 'AS_BUFFERING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:371: error: 'stream' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:381: error: 'audioFileStream' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:387: error: 'AS_FILE_STREAM_CLOSE_FAILED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:387: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:400: error: 'AS_AUDIO_QUEUE_DISPOSE_FAILED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:400: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:404: warning: implicit declaration of function 'pthread_mutex_destroy'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:405: warning: implicit declaration of function 'pthread_cond_destroy'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:409: error: 'bytesFilled' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:410: error: 'packetsFilled' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:411: error: 'seekTime' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:412: error: 'seekNeeded' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:413: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl play]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:430: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:430: error: 'AS_PAUSED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:434: error: 'AS_INITIALIZED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:438: error: 'notificationCenter' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:440: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:440: error: 'AS_STARTING_FILE_THREAD' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl pause]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:454: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:454: error: 'AS_PLAYING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:456: error: 'err' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:456: error: 'audioQueue' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:459: error: 'AS_AUDIO_QUEUE_PAUSE_FAILED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:459: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:462: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:462: error: 'AS_PAUSED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:469: error: 'AS_AUDIO_QUEUE_START_FAILED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:469: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:472: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl shouldSeek]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:482: error: 'bitRate' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:482: error: 'seekNeeded' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:483: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:483: error: 'AS_PLAYING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:483: error: 'AS_PAUSED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:483: error: 'AS_BUFFERING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl stop]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:496: error: 'audioQueue' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:497: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:497: error: 'AS_PLAYING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:497: error: 'AS_PAUSED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:498: error: 'AS_BUFFERING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:498: error: 'AS_WAITING_FOR_QUEUE_TO_START' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:500: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:500: error: 'AS_STOPPING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:501: error: 'stopReason' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:501: error: 'AS_STOPPING_USER_ACTION' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:502: error: 'err' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:505: error: 'AS_AUDIO_QUEUE_STOP_FAILED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:505: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:509: error: 'AS_INITIALIZED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:511: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:511: error: 'AS_STOPPED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m: In function '-[RDRadikoAudioControl handleReadFromStream:eventType:]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:528: error: 'AS_AUDIO_DATA_NOT_FOUND' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:528: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:544: error: 'bytesFilled' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:551: error: 'state' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:551: error: 'AS_WAITING_FOR_DATA' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:553: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:563: error: 'audioQueue' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:568: error: 'err' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:571: error: 'AS_AUDIO_QUEUE_FLUSH_FAILED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:571: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:575: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:575: error: 'AS_STOPPING' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:576: error: 'stopReason' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:576: error: 'AS_STOPPING_EOF' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:580: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:586: error: request for member 'state' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:586: error: 'AS_STOPPED' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:594: error: 'kAQBufSize' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:606: error: 'stream' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:610: warning: 'RDRadikoAudioControl' may not respond to '-failWithErrorCode:'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoAudioControl.m:618: confused by earlier errors, bailing out
