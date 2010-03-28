@@ -11,7 +11,7 @@
 
 @interface RDRadikoProgramGuide : NSObject
 {
-
+	NSMutableData *myCharacterData;
 }
 
 @end

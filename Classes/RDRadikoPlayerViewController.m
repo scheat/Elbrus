@@ -76,7 +76,7 @@ static NSString * const kRadikoStationParam = @"station";
 	
 	// 地域コード、放送局データ取得の処理を実行ループに登録
 	NSString *stationXML = [self downloadStationInfo];
-	
+	NSLog(@"station information: %@", stationXML);
 	// 
 }
 
@@ -167,26 +167,25 @@ static NSString * const kRadikoStationParam = @"station";
 
 - (NSString *)downloadStationInfo
 {
-	//GET /station/ HTTP/1.1
-	//Host: radiko.jp
-	//Pragma: no-cache
-	//Accept: application/xml, text/xml, */*
-	//Cache-Control: no-cache
-	//Referer: http://radiko.jp/
-	//Expires: Thu, 01 Jan 1970 00:00:00 GMT
-	//User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; ja-jp) AppleWebKit/531.22.7 (KHTML, like Gecko) Version/4.0.5 Safari/531.22.7
-	//X-Requested-With: XMLHttpRequest
-	//Accept-Language: ja-jp
-	//Accept-Encoding: gzip, deflate
-	//Connection: keep-alive
+	// Note:
+	//   Safari on Mac OS Xからのリクエスト
+	//     GET /station/ HTTP/1.1
+	//     Host: radiko.jp
+	//     Pragma: no-cache
+	//     Accept: application/xml, text/xml, */*
+	//     Cache-Control: no-cache
+	//     Referer: http://radiko.jp/
+	//     Expires: Thu, 01 Jan 1970 00:00:00 GMT
+	//     X-Requested-With: XMLHttpRequest
+	//     Accept-Language: ja-jp
+	//     Accept-Encoding: gzip, deflate
+	//     Connection: keep-alive
 	
 	NSString *URLString = [kRadikoURL stringByAppendingString:kRadikoStationParam];
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:URLString]];
 	[request addValue:@"no-cache" forHTTPHeaderField:@"Pragma"];
 	[request addValue:@"application/xml, text/xml, */*" forHTTPHeaderField:@"Accept"];
 	[request addValue:@"no-cache" forHTTPHeaderField:@"Cache-Control"];
-	[request addValue:@"http://radiko.jp" forHTTPHeaderField:@"Referer"];
-	[request addValue:@"XMLHttpRequest" forHTTPHeaderField:@"X-Requested-With"];
 	[request addValue:@"ja-jp" forHTTPHeaderField:@"Accept-Language"];
 	[request addValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
 	[request addValue:@"keep-alive" forHTTPHeaderField:@"Connection"];

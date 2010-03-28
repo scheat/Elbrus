@@ -1,0 +1,34 @@
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m: In function '-[RDRadikoProgramGuide start]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:16: error: request for member 'parsedSongs' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:17: error: 'url' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:17: error: (Each undeclared identifier is reported only once
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:17: error: for each function it appears in.)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m: In function '-[RDRadikoProgramGuide processOfParsing:]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:29: error: 'url' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:36: error: 'context' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:36: warning: implicit declaration of function 'xmlCreatePushParserCtxt'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:36: error: 'simpleSAXHandlerStruct' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:42: error: 'done' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:45: warning: implicit declaration of function 'xmlFreeParserCtxt'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m: In function '-[RDRadikoProgramGuide connection:didFailWithError:]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:61: error: 'done' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m: In function '-[RDRadikoProgramGuide connection:didReceiveData:]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:70: warning: implicit declaration of function 'xmlParseChunk'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:70: error: 'context' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m: In function '-[RDRadikoProgramGuide connectionDidFinishLoading:]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:77: error: 'context' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:82: error: 'done' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m: In function '-[RDRadikoProgramGuide finishedCurrentSong]':
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:89: error: 'currentSong' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:92: error: request for member 'currentSong' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:93: error: 'countOfParsedSongs' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:99: error: 'downloadAndParsePool' undeclared (first use in this function)
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:100: error: request for member 'downloadAndParsePool' in something not a structure or union
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m: At top level:
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:153: warning: type defaults to 'int' in declaration of 'xmlChar'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:153: error: expected ';', ',' or ')' before '*' token
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:193: warning: type defaults to 'int' in declaration of 'xmlChar'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:193: error: expected ';', ',' or ')' before '*' token
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:241: warning: type defaults to 'int' in declaration of 'xmlChar'
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:241: error: expected ';', ',' or ')' before '*' token
+/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m:266: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'simpleSAXHandlerStruct'

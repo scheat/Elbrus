@@ -64,6 +64,7 @@
 				308951031153B5B4008CBBB4 /* RDCommon.h */,
 				308951041153B5B4008CBBB4 /* RDCommon.m */,
 				30A8E3D4115BB6E1008EB94C /* View */,
+				30AE3A33115E380E00C76722 /* Guide */,
 				30A8E3DB115BB766008EB94C /* Player */,
 			);
 			path = Classes;
@@ -127,8 +128,6 @@
 				30D3104C115A62B500AF44D7 /* RDRadikoProgramViewController.m */,
 				30D3104E115A62DD00AF44D7 /* RDRadikoSettingViewController.h */,
 				30D3104F115A62DD00AF44D7 /* RDRadikoSettingViewController.m */,
-				308951001153B48C008CBBB4 /* RDRadikoProgramGuide.h */,
-				308951011153B48C008CBBB4 /* RDRadikoProgramGuide.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -140,6 +139,15 @@
 				30AE3991115DB81200C76722 /* RDRadikoAudioControl.m */,
 			);
 			name = Player;
+			sourceTree = "<group>";
+		};
+		30AE3A33115E380E00C76722 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				308951001153B48C008CBBB4 /* RDRadikoProgramGuide.h */,
+				308951011153B48C008CBBB4 /* RDRadikoProgramGuide.m */,
+			);
+			name = Guide;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
