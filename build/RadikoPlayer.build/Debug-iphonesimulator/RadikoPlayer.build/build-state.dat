@@ -1,7 +1,7 @@
 TRadikoPlayer
 v7
 r0
-t291474063.711754
+t291562416.130385
 cCheck dependencies
 cProcessInfoPlistFile /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/Info.plist RadikoPlayer-Info.plist
 cProcessPCH /var/folders/Rv/RvuMCAZ0GKu3EAugZCv3SU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RadikoPlayer_Prefix-aoxzdwopsiutuodetbvsanbguhhi/RadikoPlayer_Prefix.pch.gch RadikoPlayer_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
@@ -151,21 +151,34 @@ s372
 i<UIKit/UIKit.h>
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m
-c000000004BAF52FB000000000000135B
-t1269781243
-s4955
+c000000004BB0C07B0000000000001334
+t1269874811
+s4916
 i"RDRadikoPlayerViewController.h"
 
-N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.h
-c000000004BADEDAC00000000000000ED
-t1269689772
-s237
+N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgram.h
+c000000004BB0BD200000000000000297
+t1269873952
+s663
 i<Foundation/Foundation.h>
 
+N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgram.m
+c000000004BB0BD6E00000000000001A3
+t1269874030
+s419
+i"RDRadikoProgram.h"
+
+N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.h
+c000000004BAF6CAC0000000000000149
+t1269787820
+s329
+i<Foundation/Foundation.h>
+i<libxml/tree.h>
+
 N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m
-c000000004BAF4B8C0000000000002462
-t1269779340
-s9314
+c000000004BB0C4730000000000002DC0
+t1269875827
+s11712
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramViewController.h
 c000000004BADEDAC0000000000000102
@@ -190,6 +203,18 @@ c000000004BADEDAC00000000000010EB
 t1269689772
 s4331
 i"RDRadikoSettingViewController.h"
+
+N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoStation.h
+c000000004BB0BE7B000000000000020C
+t1269874299
+s524
+i<Foundation/Foundation.h>
+
+N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoStation.m
+c000000004BB0BE4D0000000000000151
+t1269874253
+s337
+i"RDRadikoStation.h"
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RadikoPlayerAppDelegate.h
 c000000004BA37B7400000000000001FD
@@ -234,11 +259,11 @@ i<Foundation/Foundation.h>
 i<UIKit/UIKit.h>
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app
-t1269781248
+t1269869616
 s170
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app.dSYM
-t1269781248
+t1269869616
 s102
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/Info.plist
@@ -254,8 +279,8 @@ t1269694563
 s8
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer
-t1269781248
-s30080
+t1269869616
+s30088
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayerViewController.nib
 t1269009838
@@ -282,11 +307,15 @@ t1269694564
 s43416
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoPlayerViewController.o
-t1269781248
-s46564
+t1269869616
+s46540
+
+N/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoProgram.o
+t2
+s0
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoProgramGuide.o
-t1269779345
+t1269866710
 s4492
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoProgramViewController.o
@@ -296,6 +325,10 @@ s32868
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoSettingViewController.o
 t1269694564
 s32868
+
+N/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoStation.o
+t2
+s0
 
 N/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RadikoPlayer.LinkFileList
 c000000004BAE00630000000000000493
@@ -497,7 +530,7 @@ s854
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies291474063#291474063#0(0"0(0#1#0"4300903632#0"0#
+lSLF07#2@18"Check dependencies291562415#291562415#0(0"0(0#1#0"4300903632#0"0#
 
 CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDCommon.o /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDCommon.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s291387364.635699
@@ -554,8 +587,8 @@ CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Obje
 r0
 
 CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoPlayerViewController.o /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s291474048.441559
-e291474048.618251
+s291562415.532783
+e291562416.023682
 r1
 xCompileC
 xbuild/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoPlayerViewController.o
@@ -569,14 +602,17 @@ o/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78:
 o/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: (Messages without a matching method signature
 o/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: will be assumed to return 'id' and accept
 o/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: '...' as arguments.)
-lSLF07#2@83"Compile /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m291474048#291474048#0(677"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m: In function '-[RDRadikoPlayerViewController viewDidAppear:]':/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: 'RDRadikoPlayerViewController' may not respond to '-downloadStationInfo'/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: (Messages without a matching method signature/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: will be assumed to return 'id' and accept/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: '...' as arguments.)2(22@72"'RDRadikoPlayerViewController' may not respond to '-downloadStationInfo'291474048#139#162#0(6@75"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m291474043#78#0#78#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)291474048#301#135#0(6@75"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m291474043#78#0#78#0#0"0(0#0#75"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m4300903632#2053"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-generated-files.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-own-target-headers.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-all-target-headers.hmap -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-project-headers.hmap -F/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator -I/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/include -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources/i386 -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources -include /var/folders/Rv/RvuMCAZ0GKu3EAugZCv3SU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RadikoPlayer_Prefix-aoxzdwopsiutuodetbvsanbguhhi/RadikoPlayer_Prefix.pch -c /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m -o /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoPlayerViewController.o0#
+lSLF07#2@83"Compile /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m291562415#291562416#0(677"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m: In function '-[RDRadikoPlayerViewController viewDidAppear:]':/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: 'RDRadikoPlayerViewController' may not respond to '-downloadStationInfo'/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: (Messages without a matching method signature/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: will be assumed to return 'id' and accept/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m:78: warning: '...' as arguments.)2(22@72"'RDRadikoPlayerViewController' may not respond to '-downloadStationInfo'291562415#139#162#0(6@75"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m291562384#78#0#78#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)291562415#301#135#0(6@75"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m291562384#78#0#78#0#0"0(0#0#75"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m4300903632#2053"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-generated-files.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-own-target-headers.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-all-target-headers.hmap -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-project-headers.hmap -F/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator -I/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/include -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources/i386 -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources -include /var/folders/Rv/RvuMCAZ0GKu3EAugZCv3SU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RadikoPlayer_Prefix-aoxzdwopsiutuodetbvsanbguhhi/RadikoPlayer_Prefix.pch -c /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoPlayerViewController.m -o /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoPlayerViewController.o0#
 
 CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoPlayerViewController.o /Users/kazuhiro/Desktop/RadikoPlayer_/Classes/RDRadikoPlayerViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 r0
 
+CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoProgram.o /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgram.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
 CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoProgramGuide.o /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s291472145.540335
-e291472145.581706
+s291559509.562695
+e291559510.503797
 r1
 xCompileC
 xbuild/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoProgramGuide.o
@@ -585,7 +621,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@75"Compile /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m291472145#291472145#0(0"0(0#0#67"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m4300903632#2037"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-generated-files.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-own-target-headers.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-all-target-headers.hmap -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-project-headers.hmap -F/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator -I/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/include -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources/i386 -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources -include /var/folders/Rv/RvuMCAZ0GKu3EAugZCv3SU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RadikoPlayer_Prefix-aoxzdwopsiutuodetbvsanbguhhi/RadikoPlayer_Prefix.pch -c /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m -o /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoProgramGuide.o0#
+lSLF07#2@75"Compile /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m291559509#291559510#0(0"0(0#0#67"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m4300903632#2037"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-generated-files.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-own-target-headers.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-all-target-headers.hmap -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-project-headers.hmap -F/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator -I/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/include -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources/i386 -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources -include /var/folders/Rv/RvuMCAZ0GKu3EAugZCv3SU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RadikoPlayer_Prefix-aoxzdwopsiutuodetbvsanbguhhi/RadikoPlayer_Prefix.pch -c /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoProgramGuide.m -o /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoProgramGuide.o0#
 
 CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoProgramGuide.o /Users/kazuhiro/Desktop/RadikoPlayer_/Classes/RDRadikoProgramGuide.m normal i386 objective-c com.apple.compilers.gcc.4_2
 r0
@@ -620,6 +656,9 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@84"Compile /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoSettingViewController.m291387364#291387364#0(0"0(0#0#76"/Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoSettingViewController.m4300903632#2055"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-generated-files.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-own-target-headers.hmap -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-all-target-headers.hmap -iquote /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/RadikoPlayer-project-headers.hmap -F/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator -I/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/include -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources/i386 -I/Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/DerivedSources -include /var/folders/Rv/RvuMCAZ0GKu3EAugZCv3SU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RadikoPlayer_Prefix-aoxzdwopsiutuodetbvsanbguhhi/RadikoPlayer_Prefix.pch -c /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoSettingViewController.m -o /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoSettingViewController.o0#
 
 CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoSettingViewController.o /Users/kazuhiro/Desktop/RadikoPlayer_/Classes/RDRadikoSettingViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RDRadikoStation.o /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RDRadikoStation.m normal i386 objective-c com.apple.compilers.gcc.4_2
 r0
 
 CCompileC build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RadikoPlayerAppDelegate.o /Users/kazuhiro/Desktop/RadikoPlayer/Classes/RadikoPlayerAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
@@ -681,26 +720,26 @@ x/Users/kazuhiro/Desktop/RadikoPlayer/RadikoPlayerViewController.xib
 lSLF07#2@41"CompileXIB RadikoPlayerViewController.xib290702638#290702638#0(0"0(0#0#67"/Users/kazuhiro/Desktop/RadikoPlayer/RadikoPlayerViewController.xib4300903632#511"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayerViewController.nib /Users/kazuhiro/Desktop/RadikoPlayer/RadikoPlayerViewController.xib0#
 
 CGenerateDSYMFile /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app.dSYM /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer
-s291474048.638175
-e291474048.741690
+s291562416.048498
+e291562416.127685
 r1
 xGenerateDSYMFile
 x/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app.dSYM
 x/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer
-lSLF07#2@124"GenerateDSYMFile build/Debug-iphonesimulator/RadikoPlayer.app.dSYM build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer291474048#291474048#0(0"0(0#0#94"/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer4300903632#454"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/dsymutil /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer -o /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app.dSYM0#
+lSLF07#2@124"GenerateDSYMFile build/Debug-iphonesimulator/RadikoPlayer.app.dSYM build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer291562416#291562416#0(0"0(0#0#94"/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer4300903632#454"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/dsymutil /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer -o /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app.dSYM0#
 
 CGenerateDSYMFile /Users/kazuhiro/Desktop/RadikoPlayer_/build/Debug-iphonesimulator/RadikoPlayer.app.dSYM /Users/kazuhiro/Desktop/RadikoPlayer_/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer
 r0
 
 CLd /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer normal i386
-s291474048.618349
-e291474048.638070
+s291562416.023783
+e291562416.048395
 r1
 xLd
 x/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer
 xnormal
 xi386
-lSLF07#2@99"Link /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer291474048#291474048#0(0"0(0#0#0"4300903632#939"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -L/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator -F/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator -filelist /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RadikoPlayer.LinkFileList -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer0#
+lSLF07#2@99"Link /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer291562416#291562416#0(0"0(0#0#0"4300903632#939"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -L/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator -F/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator -filelist /Users/kazuhiro/Desktop/RadikoPlayer/build/RadikoPlayer.build/Debug-iphonesimulator/RadikoPlayer.build/Objects-normal/i386/RadikoPlayer.LinkFileList -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer0#
 
 CLd /Users/kazuhiro/Desktop/RadikoPlayer_/build/Debug-iphonesimulator/RadikoPlayer.app/RadikoPlayer normal i386
 r0
@@ -747,12 +786,12 @@ CProcessPCH /var/folders/Rv/RvuMCAZ0GKu3EAugZCv3SU+++TI/-Caches-/com.apple.Xcode
 r0
 
 CTouch /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app
-s291474048.741796
-e291474048.744826
+s291562416.127778
+e291562416.130343
 r1
 xTouch
 x/Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app
-lSLF07#2@87"Touch /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app291474048#291474048#0(0"0(0#0#0"4300903632#341"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /usr/bin/touch -c /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app0#
+lSLF07#2@87"Touch /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app291562416#291562416#0(0"0(0#0#0"4300903632#341"    cd /Users/kazuhiro/Desktop/RadikoPlayer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /usr/bin/touch -c /Users/kazuhiro/Desktop/RadikoPlayer/build/Debug-iphonesimulator/RadikoPlayer.app0#
 
 CTouch /Users/kazuhiro/Desktop/RadikoPlayer_/build/Debug-iphonesimulator/RadikoPlayer.app
 r0

@@ -13,7 +13,9 @@
 - (void)start
 {
 	[[NSURLCache sharedURLCache] removeAllCachedResponses];
-	self.parsedSongs = [NSMutableArray array];
+	myStations = [NSMutableArray array];
+	
+	// launch a thread for parsing XML
 	[NSThread detachNewThreadSelector:@selector(processOfParsing:) toTarget:self withObject:url];
 }
 
@@ -21,7 +23,7 @@
 - (void)processOfParsing:(NSURL *)aURL
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
+	
 	myCharacterData = [NSMutableData data];
 	
 	[[NSURLCache sharedURLCache] removeAllCachedResponses];
@@ -29,11 +31,11 @@
 	NSURLRequest *theRequest = [NSURLRequest requestWithURL:url];
 	// create the connection with the request and start loading the data
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-	// This creates a context for "push" parsing in which chunks of data that are not "well balanced" can be passed
-	// to the context for streaming parsing. The handler structure defined above will be used for all the parsing. 
+	// This creates a myParserContext for "push" parsing in which chunks of data that are not "well balanced" can be passed
+	// to the myParserContext for streaming parsing. The handler structure defined above will be used for all the parsing. 
 	// The second argument, self, will be passed as user data to each of the SAX handlers. The last three arguments
 	// are left blank to avoid creating a tree in memory.
-	context = xmlCreatePushParserCtxt(&simpleSAXHandlerStruct, self, NULL, 0, NULL);
+	myParserContext = xmlCreatePushParserCtxt(&simpleSAXHandlerStruct, self, NULL, 0, NULL);
 	[self performSelectorOnMainThread:@selector(downloadStarted) withObject:nil waitUntilDone:NO];
 	if (connection != nil)
 	{
@@ -42,7 +44,7 @@
 		} while (!done);
 	}
 	// Release resources used only in this thread.
-	xmlFreeParserCtxt(context);
+	xmlFreeParserCtxt(myParserContext);
 	
 	[pool release];
 }
@@ -63,18 +65,17 @@
 }
 
 
-// Called when a chunk of data has been downloaded.
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
 	// Process the downloaded chunk of data.
-	xmlParseChunk(context, (const char *)[data bytes], [data length], 0);
+	xmlParseChunk(myParserContext, (const char *)[data bytes], [data length], 0);
 }
 
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-	// Signal the context that parsing is complete by passing "1" as the last parameter.
-	xmlParseChunk(context, NULL, 0, 1);
+	// Signal the myParserContext that parsing is complete by passing "1" as the last parameter.
+	xmlParseChunk(myParserContext, NULL, 0, 1);
 	
 	[self performSelectorOnMainThread:@selector(parseEnded) withObject:nil waitUntilDone:NO];
 	
@@ -142,6 +143,18 @@ static const NSUInteger kLength_Album = 6;
 static const char *kName_ReleaseDate = "releasedate";
 static const NSUInteger kLength_ReleaseDate = 12;
 
+static const char *kRadikoProgramXMLStationKey = "station";
+static const char *kRadikoProgramXLMScdKey = "scd";
+static const char *kRadikoProgramXMLNameKey = "name";
+static const char *kRadikoProgramXMLProgsKey = "progs";
+static const char *kRadikoProgramXMLProgKey = "prog";
+static const char *kRadikoProgramXMLTitleKey = "title";
+static const char *kRadikoProgramXMLSubtitleKey = "sub_title";
+static const char *kRadikoProgramXMLPfmKey = "pfm";
+static const char *kRadikoProgramXMLDescKey = "desc";
+static const char *kRadikoProgramXMLInfoKey = "info";
+static const char *kRadikoProgramXMLUrlKey = "url";
+
 /*
  This callback is invoked when the parser finds the beginning of a node in the XML. For this application,
  out parsing needs are relatively modest - we need only match the node name. An "item" node is a record of
@@ -159,16 +172,17 @@ static void startElementSAX(void *ctx,
 							int nb_defaulted, 
 							const xmlChar **attributes)
 {
-	LibXMLParser *parser = (LibXMLParser *)ctx;
+	RDRadikoProgramGuide *guide = (RDRadikoProgramGuide *)ctx;
 	
 	// The second parameter to strncmp is the name of the element, which we known from the XML schema of the feed.
 	// The third parameter to strncmp is the number of characters in the element name, plus 1 for the null terminator.
 	if (prefix == NULL && !strncmp((const char *)localname, kName_Item, kLength_Item))
 	{
-		Song *newSong = [[Song alloc] init];
-		parser.currentSong = newSong;
-		[newSong release];
-		parser.parsingASong = YES;
+		RDRadikoStation *newStation = [[RDRadikoStation alloc] init];
+		guide.currentStation = newStation;
+		[newStation release];
+		
+		//guide.parsingASong = YES;
 	}
 	else if (parser.parsingASong && 
 			 ((prefix == NULL && (!strncmp((const char *)localname, kName_Title, kLength_Title) ||

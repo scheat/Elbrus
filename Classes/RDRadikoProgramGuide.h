@@ -7,11 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <libxml/tree.h>
 
 
 @interface RDRadikoProgramGuide : NSObject
 {
+	xmlParserCtxtPtr myParserContext;
+
 	NSMutableData *myCharacterData;
+	
+	NSMutableDictionary *myStations;
+	
+	
+	RDRadikoStation *myCurrentStation;
 }
+
+@property (nonatomic, retain) RDRadikoStation *currentStation;
 
 @end
