@@ -20,6 +20,7 @@
 		30AE3992115DB81200C76722 /* RDRadikoAudioControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AE3991115DB81200C76722 /* RDRadikoAudioControl.m */; };
 		30D3104D115A62B500AF44D7 /* RDRadikoProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3104C115A62B500AF44D7 /* RDRadikoProgramViewController.m */; };
 		30D31050115A62DD00AF44D7 /* RDRadikoSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3104F115A62DD00AF44D7 /* RDRadikoSettingViewController.m */; };
+		30D6951411622BF900C2AA02 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D6951311622BF900C2AA02 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		30D3104C115A62B500AF44D7 /* RDRadikoProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoProgramViewController.m; sourceTree = "<group>"; };
 		30D3104E115A62DD00AF44D7 /* RDRadikoSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoSettingViewController.h; sourceTree = "<group>"; };
 		30D3104F115A62DD00AF44D7 /* RDRadikoSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoSettingViewController.m; sourceTree = "<group>"; };
+		30D6951311622BF900C2AA02 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* RadikoPlayer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadikoPlayer_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* RadikoPlayer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RadikoPlayer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				30D6951411622BF900C2AA02 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +122,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				30D6951311622BF900C2AA02 /* libxml2.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -263,6 +267,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.2;
@@ -277,6 +282,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.2;
 			};

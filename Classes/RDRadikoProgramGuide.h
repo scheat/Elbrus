@@ -10,6 +10,9 @@
 #import <libxml/tree.h>
 
 
+@class RDRadikoStation;
+
+
 @interface RDRadikoProgramGuide : NSObject
 {
 	xmlParserCtxtPtr myParserContext;
@@ -18,10 +21,18 @@
 	
 	NSMutableDictionary *myStations;
 	
+	NSURL *myURL;
+	
+	BOOL isParsingDone;
+	BOOL isStoringCharacter;
+	BOOL isParsingStation;
 	
 	RDRadikoStation *myCurrentStation;
 }
 
 @property (nonatomic, retain) RDRadikoStation *currentStation;
+@property (nonatomic, assign) BOOL isParsingDone;
+@property (nonatomic, assign) BOOL isStoringCharacter;
+@property (nonatomic, assign) BOOL isParsingStation;
 
 @end

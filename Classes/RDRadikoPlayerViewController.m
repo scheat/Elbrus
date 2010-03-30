@@ -7,6 +7,7 @@
 //
 
 #import "RDRadikoPlayerViewController.h"
+#import "RDRadikoProgramGuide.h"
 
 
 static const NSString * const kRadikoURL = @"http://radiko.jp/";
@@ -77,11 +78,16 @@ static NSString * const kRadikoStationParam = @"station";
 	// 地域コード、放送局データ取得の処理を実行ループに登録
 	NSString *stationXML = [self downloadStationInfo];
 	NSLog(@"station information: %@", stationXML);
+	
+	NSURL *url = [NSURL URLWithString:@"http://radiko.jp/epg/epgapi.php?area_id=JP27&mode=now"];
+	RDRadikoProgramGuide *guide = [[RDRadikoProgramGuide alloc] initWithURL:url];
+	[guide start];
 	// 
 }
 
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
 	
@@ -89,13 +95,15 @@ static NSString * const kRadikoStationParam = @"station";
 }
 
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
 
 
-- (void)dealloc {
+- (void)dealloc
+{
     [super dealloc];
 }
 
