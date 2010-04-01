@@ -11,10 +11,10 @@
 
 @interface RDRadikoStation : NSObject
 {
-	NSString *myStationID;
-	NSString *myName;
-	NSString *myDate;
-	NSMutableArray *myPrograms;
+	NSString *mStationID;
+	NSString *mName;
+	NSString *mDate;
+	NSMutableArray *mPrograms;
 }
 
 @property (nonatomic, retain) NSString *stationID;

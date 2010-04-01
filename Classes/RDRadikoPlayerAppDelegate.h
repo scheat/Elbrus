@@ -11,8 +11,8 @@
 
 @interface RDRadikoPlayerAppDelegate : NSObject <UIApplicationDelegate>
 {
-    UIWindow *myWindow;
-	UITabBarController *myTabController;
+    UIWindow *mWindow;
+	UITabBarController *mTabController;
 }
 
 @property (nonatomic, retain) UIWindow *window;

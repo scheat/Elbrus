@@ -11,11 +11,11 @@
 
 @implementation RDRadikoProgram
 
-@synthesize title = myTitle;
-@synthesize subtitle = mySubtitle;
-@synthesize performer = myPerformer;
-@synthesize description = myDescription;
-@synthesize URL = myURL;
-@synthesize information = myInformation;
+@synthesize title = mTitle;
+@synthesize subtitle = mSubtitle;
+@synthesize performer = mPerformer;
+@synthesize description = mDescription;
+@synthesize URL = mURL;
+@synthesize information = mInformation;
 
 @end

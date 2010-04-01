@@ -15,15 +15,15 @@
 @interface RDRadikoAudioControl : NSObject
 {
 @private
-	NSURL *myURL;
+	NSURL *mURL;
 	
-	AudioQueueRef myAudioQueue;
+	AudioQueueRef mAudioQueue;
 	AudioQueueBufferRef audioQueueBuffer[kNumAQBufs];
 	AudioStreamPacketDescription packetDescs[kAQMaxPacketDescs];
 	
-	AudioFileStreamID myAudioStream;
+	AudioFileStreamID mAudioStream;
 	
-	NSTimer *myStreamTimer;
+	NSTimer *mStreamTimer;
 	
 	enum {
 		RadikoAudioControlStateLaunching = 0,	// 再生スレッド起動中
@@ -35,7 +35,7 @@
 		RadikoAudioControlStatePaused,			// オーディオ一時停止中
 		RadikoAudioControlStateStopping,		// オーディオキューの停止中
 		RadikoAudioControlStateStopped			// オーディオ停止中
-	} myControlState;
+	} mControlState;
 }
 
 + (void *)sessionDelegate;

@@ -72,6 +72,7 @@
 			children = (
 				308951031153B5B4008CBBB4 /* RDCommon.h */,
 				308951041153B5B4008CBBB4 /* RDCommon.m */,
+				30B0AEDE1164EC2C00026E16 /* App */,
 				30A8E3D4115BB6E1008EB94C /* View */,
 				30AE3A33115E380E00C76722 /* Guide */,
 				30A8E3DB115BB766008EB94C /* Player */,
@@ -130,8 +131,6 @@
 		30A8E3D4115BB6E1008EB94C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623240D0F684500981E51 /* RDRadikoPlayerAppDelegate.h */,
-				1D3623250D0F684500981E51 /* RDRadikoPlayerAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* RDRadikoPlayerViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* RDRadikoPlayerViewController.m */,
 				30D3104B115A62B500AF44D7 /* RDRadikoProgramViewController.h */,
@@ -162,6 +161,15 @@
 				307366901160F2FC0030B157 /* RDRadikoProgram.m */,
 			);
 			name = Guide;
+			sourceTree = "<group>";
+		};
+		30B0AEDE1164EC2C00026E16 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* RDRadikoPlayerAppDelegate.h */,
+				1D3623250D0F684500981E51 /* RDRadikoPlayerAppDelegate.m */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

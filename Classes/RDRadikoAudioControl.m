@@ -2,8 +2,8 @@
 //#import "RDRadikoAudioSession.h"
 //
 //
-//static BOOL mySessionPrepared = NO;
-//static void *mySessionDelegate = NULL;
+//static BOOL mSessionPrepared = NO;
+//static void *mSessionDelegate = NULL;
 //
 //
 //@interface RDRadikoAudioControl (AudioStreaming)
@@ -143,7 +143,7 @@
 //
 //+ (void *)sessionDelegate
 //{
-//	return mySessionDelegate;
+//	return mSessionDelegate;
 //}
 //
 //
@@ -151,9 +151,9 @@
 //{
 //	if (self = [super init])
 //	{
-//		myControlState = RadikoAudioControlStateStopped;
+//		mControlState = RadikoAudioControlStateStopped;
 //		
-//		myURL = [aURL retain];
+//		mURL = [aURL retain];
 //	}
 //	
 //	return self;
@@ -164,13 +164,13 @@
 //{
 //	@synchronized (self)
 //	{
-//		if (RadikoAudioControlStatePaused == myControlState)
+//		if (RadikoAudioControlStatePaused == mControlState)
 //		{
 //			[self pause];
 //		}
-//		else if (RadikoAudioControlStateStopped == myControlState)
+//		else if (RadikoAudioControlStateStopped == mControlState)
 //		{
-//			myControlState = RadikoAudioControlStateLaunching;
+//			mControlState = RadikoAudioControlStateLaunching;
 //			
 //			// 再生スレッドの起動
 //			[NSThread detachNewThreadSelector:@selector(processOfStreaming) toTarget:self withObject:nil];
@@ -199,7 +199,7 @@
 //
 //- (void)dealloc
 //{
-//	[myURL release];
+//	[mURL release];
 //	
 //	[super dealloc];
 //}
@@ -220,7 +220,7 @@
 //		//   Radiko.jpではシステムフォーマットM4Aと仮定し固定値を設定する。
 //		AudioFileTypeID fileTypeHint = kAudioFileM4AType;
 //		// オーディオファイルストリームのオープン
-//		status = AudioFileStreamOpen(self, MyPropertyListenerProc, MyPacketsProc, fileTypeHint, &myAudioStream);
+//		status = AudioFileStreamOpen(self, MyPropertyListenerProc, MyPacketsProc, fileTypeHint, &mAudioStream);
 //		if (noErr != status)
 //		{
 //			// エラーオブジェクト生成
@@ -231,10 +231,10 @@
 //		// ネットワークストリームのオープン
 //		
 //		// ストリームリード処理のタイマー生成
-//		myStreamTimer = [NSTimer timerWithTimeInterval:0.25 target:self selector:@selector(timerDataStreaming:)
+//		mStreamTimer = [NSTimer timerWithTimeInterval:0.25 target:self selector:@selector(timerDataStreaming:)
 //											  userInfo:nil repeats:YES];
 //		// タイマー処理をカレントスレッドのランループに登録
-//		[[NSRunLoop currentRunLoop] addTimer:myStreamTimer forMode:NSDefaultRunLoopMode];
+//		[[NSRunLoop currentRunLoop] addTimer:mStreamTimer forMode:NSDefaultRunLoopMode];
 //	}
 //	
 //	return YES;
@@ -249,20 +249,20 @@
 //	
 //	@synchronized (self)
 //	{
-//		if (RadikoAudioControlStateLaunching != myControlState)
+//		if (RadikoAudioControlStateLaunching != mControlState)
 //		{
-//			if (RadikoAudioControlStateStopping != myControlState &&
-//				RadikoAudioControlStateStopped != myControlState)
+//			if (RadikoAudioControlStateStopping != mControlState &&
+//				RadikoAudioControlStateStopped != mControlState)
 //			{
 //				NSLog(@"### Not starting audio thread. State code is: %ld", state);
 //			}
-//			myControlState = RadikoAudioControlStateStopped;
+//			mControlState = RadikoAudioControlStateStopped;
 //			[pool release];
 //			return;
 //		}
 //		
 //		// オーディオセッションの準備
-//		if (!mySessionPrepared)
+//		if (!mSessionPrepared)
 //		{
 //			success = [self sessionPrepare:error];
 //		}
@@ -423,20 +423,20 @@
 //	{
 //		if (state == RadikoAudioControlStatePlaying)
 //		{
-//			status = AudioQueueStop(myAudioQueue, true);
+//			status = AudioQueueStop(mAudioQueue, true);
 //			if (noErr != status)
 //			{
 //				return;
 //			}
 //			
-//			myControlState = RadikoAudioControlStatePaused;
+//			mControlState = RadikoAudioControlStatePaused;
 //		}
 //		else if (state == RadikoAudioControlStatePaused)
 //		{
-//			myControlState = RadikoAudioControlStateStarting;
+//			mControlState = RadikoAudioControlStateStarting;
 //			
 //			// オーディオキューの開始を待つ
-//			status = AudioQueueStart(myAudioQueue, NULL);
+//			status = AudioQueueStart(mAudioQueue, NULL);
 //			if (status)
 //			{
 //				return;
@@ -872,13 +872,13 @@
 //	{
 //		if (kAudioQueueProperty_IsRunning == propertyID)
 //		{
-//			if (RadikoAudioControlStateStopping == myControlState)
+//			if (RadikoAudioControlStateStopping == mControlState)
 //			{
-//				myControlState = RadikoAudioControlStateStopped;
+//				mControlState = RadikoAudioControlStateStopped;
 //			}
-//			else if (RadikoAudioControlStateStarting == myControlState)
+//			else if (RadikoAudioControlStateStarting == mControlState)
 //			{
-//				myControlState = RadikoAudioControlStatePlaying;
+//				mControlState = RadikoAudioControlStatePlaying;
 //			}
 //		}
 //	}
@@ -938,7 +938,7 @@
 //	}
 //	
 //	// オーディオセッションのデリゲートを設定
-//	mySessionDelegate = ((beActive) ? (void *)self : NULL);
+//	mSessionDelegate = ((beActive) ? (void *)self : NULL);
 //	
 //	// オーディオセッションの有効化/無効化を設定
 //	OSStatus status = AudioSessionSetActive(((beActive) ? true : false));
@@ -946,7 +946,7 @@
 //	{
 //		// エラーオブジェクト生成
 //		
-//		mySessionDelegate = NULL;
+//		mSessionDelegate = NULL;
 //		
 //		return NO;
 //	}

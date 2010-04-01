@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RDRadikoProgramGuide.h"
 
-@interface RDRadikoSettingViewController : UITableViewController {
+
+@interface RDRadikoSettingViewController : UIViewController <RDRadikoProgramGuideDelegate>
+{
 
 }
 

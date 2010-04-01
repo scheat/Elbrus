@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDRadikoPlayerViewController : UIViewController <UITableViewDelegate>
+#import "RDRadikoProgramGuide.h"
+
+
+@interface RDRadikoPlayerViewController : UIViewController <UITableViewDelegate, RDRadikoProgramGuideDelegate>
 {
-	UIActivityIndicatorView *mySpinner;
+	UIActivityIndicatorView *mSpinner;
+	
+	RDRadikoProgramGuide *mProgramGuide;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;

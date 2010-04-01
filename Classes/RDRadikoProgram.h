@@ -11,12 +11,12 @@
 
 @interface RDRadikoProgram : NSObject
 {
-	NSString *myTitle;
-	NSString *mySubtitle;
-	NSString *myPerformer;
-	NSString *myDescription;
-	NSString *myURL;
-	NSString *myInformation;
+	NSString *mTitle;
+	NSString *mSubtitle;
+	NSString *mPerformer;
+	NSString *mDescription;
+	NSString *mURL;
+	NSString *mInformation;
 }
 
 @property (nonatomic, retain) NSString *title;

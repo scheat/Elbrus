@@ -14,17 +14,17 @@
 
 @implementation RDRadikoPlayerAppDelegate
 
-@synthesize window = myWindow;
-@synthesize tabController = myTabController;
+@synthesize window = mWindow;
+@synthesize tabController = mTabController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// メインウィンドウの生成
-	myWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	mWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
 	// タブバーコントローラの生成
-	myTabController = [[UITabBarController alloc] initWithNibName:nil bundle:nil];
+	mTabController = [[UITabBarController alloc] initWithNibName:nil bundle:nil];
 	
 	// タブ切り替えを行うビューコントローラの生成と設定
 	RDRadikoPlayerViewController *playerViewController = nil;
@@ -34,13 +34,13 @@
 	RDRadikoSettingViewController *settingViewController = nil;
 	settingViewController = [[[RDRadikoSettingViewController alloc] initWithNibName:nil bundle:nil] autorelease];
 	
-	myTabController.viewControllers = [NSArray arrayWithObjects:playerViewController, 
+	mTabController.viewControllers = [NSArray arrayWithObjects:playerViewController, 
 																programViewController, 
 																settingViewController, nil];
 	
 	// メインウィンドウにタブバーコントローラのビューをセットし表示
-	[myWindow addSubview:myTabController.view];
-	[myWindow makeKeyAndVisible];
+	[mWindow addSubview:mTabController.view];
+	[mWindow makeKeyAndVisible];
 	
 	return YES;
 }
@@ -48,8 +48,8 @@
 
 - (void)dealloc
 {
-	[myTabController release];
-	[myWindow release];
+	[mTabController release];
+	[mWindow release];
 	[super dealloc];
 }
 

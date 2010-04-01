@@ -26,12 +26,14 @@ static NSString * const kRadikoStationParam = @"station";
 
 @interface RDRadikoPlayerViewController (GuideDownload)
 
+- (void)guide:(RDRadikoProgramGuide *)guide didParseStation:(RDRadikoStation *)parsedStation;
+
 @end
 
 
 @implementation RDRadikoPlayerViewController
 
-@synthesize spinner = mySpinner;
+@synthesize spinner = mSpinner;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -70,6 +72,13 @@ static NSString * const kRadikoStationParam = @"station";
 }
 */
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	NSURL *url = [NSURL URLWithString:@"http://radiko.jp/epg/epgapi.php?area_id=JP27&mode=now"];
+	mProgramGuide = [[RDRadikoProgramGuide alloc] initWithURL:url];
+	mProgramGuide.delegate = self;
+}
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -79,10 +88,7 @@ static NSString * const kRadikoStationParam = @"station";
 	NSString *stationXML = [self downloadStationInfo];
 	NSLog(@"station information: %@", stationXML);
 	
-	NSURL *url = [NSURL URLWithString:@"http://radiko.jp/epg/epgapi.php?area_id=JP27&mode=now"];
-	RDRadikoProgramGuide *guide = [[RDRadikoProgramGuide alloc] initWithURL:url];
-	[guide start];
-	// 
+	[mProgramGuide start];
 }
 
 
@@ -98,7 +104,7 @@ static NSString * const kRadikoStationParam = @"station";
 - (void)viewDidUnload
 {
 	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+	// e.g. self.mOutlet = nil;
 }
 
 
@@ -202,6 +208,11 @@ static NSString * const kRadikoStationParam = @"station";
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
 	
 	return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (void)guide:(RDRadikoProgramGuide *)guide didParseStation:(RDRadikoStation *)parsedStation
+{
+	
 }
 
 @end

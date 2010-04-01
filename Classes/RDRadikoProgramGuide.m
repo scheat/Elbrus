@@ -1,6 +1,7 @@
 
 #import "RDRadikoProgramGuide.h"
 #import "RDRadikoStation.h"
+#import "RDRadikoProgram.h"
 
 
 static void startElementSAX(void *ctx, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI, int nb_namespaces, const xmlChar **namespaces, int nb_attributes, int nb_defaulted, const xmlChar **attributes);
@@ -11,9 +12,26 @@ static void errorEncounteredSAX(void * ctx, const char * msg, ...);
 static xmlSAXHandler simpleSAXHandlerStruct;
 
 
+@interface RDRadikoProgramGuide (PrivateMethod)
+
+- (void)processOfParsing:(NSURL *)aURL;
+- (void)finishedCurrentStation;
+- (void)finishedCurrentProgram;
+- (void)appendCharacters:(const char *)charactersFound length:(NSInteger)length;
+- (NSString *)currentString;
+
+@end
+
+
 @implementation RDRadikoProgramGuide
 
-@synthesize currentStation = myCurrentStation;
+@synthesize delegate = mDelegate;
+@synthesize currentStation = mCurrentStation;
+@synthesize currentProgram = mCurrentProgram;
+@synthesize isParsingStation;
+@synthesize isParsingProgram;
+@synthesize isParsingDone;
+@synthesize isStoringCharacter;
 
 - (void)initWithURL:(NSURL *)aURL
 {
@@ -21,7 +39,7 @@ static xmlSAXHandler simpleSAXHandlerStruct;
 	{
 		isParsingDone = NO;
 		
-		myURL = [aURL retain];
+		mURL = [aURL retain];
 	}
 }
 
@@ -29,40 +47,10 @@ static xmlSAXHandler simpleSAXHandlerStruct;
 - (void)start
 {
 	[[NSURLCache sharedURLCache] removeAllCachedResponses];
-	myStations = [NSMutableArray array];
+	mStations = [NSMutableArray array];
 	
 	// launch a thread for parsing XML
-	[NSThread detachNewThreadSelector:@selector(processOfParsing:) toTarget:self withObject:myURL];
-}
-
-
-- (void)processOfParsing:(NSURL *)aURL
-{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	myCharacterData = [NSMutableData data];
-	
-	[[NSURLCache sharedURLCache] removeAllCachedResponses];
-	
-	NSURLRequest *theRequest = [NSURLRequest requestWithURL:myURL];
-	// create the connection with the request and start loading the data
-	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-	// This creates a myParserContext for "push" parsing in which chunks of data that are not "well balanced" can be passed
-	// to the myParserContext for streaming parsing. The handler structure defined above will be used for all the parsing. 
-	// The second argument, self, will be passed as user data to each of the SAX handlers. The last three arguments
-	// are left blank to avoid creating a tree in memory.
-	myParserContext = xmlCreatePushParserCtxt(&simpleSAXHandlerStruct, self, NULL, 0, NULL);
-//	[self performSelectorOnMainThread:@selector(downloadStarted) withObject:nil waitUntilDone:NO];
-	if (connection != nil)
-	{
-		do {
-			[[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-		} while (!isParsingDone);
-	}
-	// Release resources used only in this thread.
-	xmlFreeParserCtxt(myParserContext);
-	
-	[pool release];
+	[NSThread detachNewThreadSelector:@selector(processOfParsing:) toTarget:self withObject:mURL];
 }
 
 #pragma mark NSURLConnection Delegate methods
@@ -84,14 +72,14 @@ static xmlSAXHandler simpleSAXHandlerStruct;
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
 	// Process the downloaded chunk of data.
-	xmlParseChunk(myParserContext, (const char *)[data bytes], [data length], 0);
+	xmlParseChunk(mParserContext, (const char *)[data bytes], [data length], 0);
 }
 
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-	// Signal the myParserContext that parsing is complete by passing "1" as the last parameter.
-	xmlParseChunk(myParserContext, NULL, 0, 1);
+	// Signal the mParserContext that parsing is complete by passing "1" as the last parameter.
+	xmlParseChunk(mParserContext, NULL, 0, 1);
 	
 //	[self performSelectorOnMainThread:@selector(parseEnded) withObject:nil waitUntilDone:NO];
 	
@@ -99,14 +87,49 @@ static xmlSAXHandler simpleSAXHandlerStruct;
 	isParsingDone = YES;
 }
 
+@end
+
+
+@implementation RDRadikoProgramGuide (PrivateMethod)
+
 static const NSUInteger kAutoreleasePoolPurgeFrequency = 20;
 
-- (void)finishedCurrentSong
+- (void)processOfParsing:(NSURL *)aURL
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	mCharacterData = [NSMutableData data];
+	
+	[[NSURLCache sharedURLCache] removeAllCachedResponses];
+	
+	NSURLRequest *theRequest = [NSURLRequest requestWithURL:mURL];
+	// create the connection with the request and start loading the data
+	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+	// This creates a mParserContext for "push" parsing in which chunks of data that are not "well balanced" can be passed
+	// to the mParserContext for streaming parsing. The handler structure defined above will be used for all the parsing. 
+	// The second argument, self, will be passed as user data to each of the SAX handlers. The last three arguments
+	// are left blank to avoid creating a tree in memory.
+	mParserContext = xmlCreatePushParserCtxt(&simpleSAXHandlerStruct, self, NULL, 0, NULL);
+	//	[self performSelectorOnMainThread:@selector(downloadStarted) withObject:nil waitUntilDone:NO];
+	if (connection != nil)
+	{
+		do {
+			[[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+		} while (!isParsingDone);
+	}
+	// Release resources used only in this thread.
+	xmlFreeParserCtxt(mParserContext);
+	
+	[pool release];
+}
+
+
+- (void)finishedCurrentStation
 {
 //	[self performSelectorOnMainThread:@selector(parsedSong:) withObject:currentSong waitUntilDone:NO];
-//	// performSelectorOnMainThread: will retain the object until the selector has been performed
-//	// setting the local reference to nil ensures that the local reference will be released
-//	self.currentSong = nil;
+	// performSelectorOnMainThread: will retain the object until the selector has been performed
+	// setting the local reference to nil ensures that the local reference will be released
+	self.currentStation = nil;
 //	countOfParsedSongs++;
 //	// Periodically purge the autorelease pool. The frequency of this action may need to be tuned according to the 
 //	// size of the objects being parsed. The goal is to keep the autorelease pool from growing too large, but 
@@ -120,20 +143,39 @@ static const NSUInteger kAutoreleasePoolPurgeFrequency = 20;
 }
 
 
+- (void)finishedCurrentProgram
+{
+	[self printProgram];
+	[self.currentStation.programs addObject:self.currentProgram];
+	self.currentProgram = nil;
+}
+
+- (void)printProgram
+{
+	RDRadikoProgram *program = self.currentProgram;
+	
+	NSLog(@"title: %@", program.title);
+	NSLog(@"subtitle: %@", program.subtitle);
+	NSLog(@"performer: %@", program.performer);
+	NSLog(@"description: %@", program.description);
+	NSLog(@"URL: %@", program.URL);
+	NSLog(@"information: %@", program.information);
+}
+
 /*
  Character data is appended to a buffer until the current element ends.
  */
 - (void)appendCharacters:(const char *)charactersFound length:(NSInteger)length
 {
-	[myCharacterData appendBytes:charactersFound length:length];
+	[mCharacterData appendBytes:charactersFound length:length];
 }
 
 
 - (NSString *)currentString
 {
 	// Create a string with the character data using UTF-8 encoding. UTF-8 is the default XML data encoding.
-	NSString *currentString = [[[NSString alloc] initWithData:myCharacterData encoding:NSUTF8StringEncoding] autorelease];
-	[myCharacterData setLength:0];
+	NSString *currentString = [[[NSString alloc] initWithData:mCharacterData encoding:NSUTF8StringEncoding] autorelease];
+	[mCharacterData setLength:0];
 	return currentString;
 }
 
@@ -144,33 +186,28 @@ static const NSUInteger kAutoreleasePoolPurgeFrequency = 20;
 
 // The following constants are the XML element names and their string lengths for parsing comparison.
 // The lengths include the null terminator, to ensure exact matches.
-static const char *kName_Item = "item";
-static const NSUInteger kLength_Item = 5;
-static const char *kName_Title = "title";
-static const NSUInteger kLength_Title = 6;
-static const char *kName_Category = "category";
-static const NSUInteger kLength_Category = 9;
-static const char *kName_Itms = "itms";
-static const NSUInteger kLength_Itms = 5;
-static const char *kName_Artist = "artist";
-static const NSUInteger kLength_Artist = 7;
-static const char *kName_Album = "album";
-static const NSUInteger kLength_Album = 6;
-static const char *kName_ReleaseDate = "releasedate";
-static const NSUInteger kLength_ReleaseDate = 12;
-
 static const char *kRadikoProgramXMLStationKey = "station";
 static const NSUInteger kRadikoProgramXMLStationLength = 8;
 static const char *kRadikoProgramXLMScdKey = "scd";
+static const NSUInteger kRadikoProgramXMLScdLength = 4;
 static const char *kRadikoProgramXMLNameKey = "name";
+static const NSUInteger kRadikoProgramXMLNameLength = 5;
 static const char *kRadikoProgramXMLProgsKey = "progs";
+static const NSUInteger kRadikoProgramXMLProgsLength = 6;
 static const char *kRadikoProgramXMLProgKey = "prog";
+static const NSUInteger kRadikoProgramXMLProgLength = 5;
 static const char *kRadikoProgramXMLTitleKey = "title";
+static const NSUInteger kRadikoProgramXMLTitleLength = 6;
 static const char *kRadikoProgramXMLSubtitleKey = "sub_title";
+static const NSUInteger kRadikoProgramXMLSubtitleLength = 10;
 static const char *kRadikoProgramXMLPfmKey = "pfm";
+static const NSUInteger kRadikoProgramXMLPfmLength = 4;
 static const char *kRadikoProgramXMLDescKey = "desc";
+static const NSUInteger kRadikoProgramXMLDescLength = 5;
 static const char *kRadikoProgramXMLInfoKey = "info";
+static const NSUInteger kRadikoProgramXMLInfoLength = 5;
 static const char *kRadikoProgramXMLUrlKey = "url";
+static const NSUInteger kRadikoProgramXMLUrlLength = 4;
 
 /*
  This callback is invoked when the parser finds the beginning of a node in the XML. For this application,
@@ -189,29 +226,45 @@ static void startElementSAX(void *ctx,
 							int nb_defaulted, 
 							const xmlChar **attributes)
 {
-	NSLog(@"start element: %s", localname);
 	RDRadikoProgramGuide *guide = (RDRadikoProgramGuide *)ctx;
 	
-	// The second parameter to strncmp is the name of the element, which we known from the XML schema of the feed.
-	// The third parameter to strncmp is the number of characters in the element name, plus 1 for the null terminator.
-	if (prefix == NULL && !strncmp((const char *)localname, kRadikoProgramXMLStationKey, kRadikoProgramXMLStationLength)
+	// ステーション情報のパース開始
+	if (prefix == NULL)
 	{
-		RDRadikoStation *newStation = [[RDRadikoStation alloc] init];
-		guide.currentStation = newStation;
-		[newStation release];
-		
-		guide.isParsingStation = YES;
+		if (!strncmp((const char *)localname, kRadikoProgramXMLStationKey, kRadikoProgramXMLStationLength))
+		{
+			RDRadikoStation *newStation = [[RDRadikoStation alloc] init];
+			guide.currentStation = newStation;
+			[newStation release];
+			
+			guide.isParsingStation = YES;
+		}
+		else if (guide.isParsingStation)
+		{
+			if (!strncmp((const char *)localname, kRadikoProgramXMLProgKey, kRadikoProgramXMLProgLength))
+			{
+				RDRadikoProgram *newProgram = [[RDRadikoProgram alloc] init];
+				guide.currentProgram = newProgram;
+				[newProgram release];
+				
+				guide.isParsingProgram = YES;
+			}
+			else if (guide.isParsingProgram)
+			{
+				guide.isStoringCharacter = YES;
+			}
+		}
 	}
 	else if (guide.isParsingStation && 
 			 ((prefix == NULL && 
-			   (!strncmp((const char *)localname, kRadikoProgramXMLStationKey, kRadikoProgramXMLStationLength) ||
-				!strncmp((const char *)localname, kName_Category, kLength_Category))) ||
-			  ((prefix != NULL && !strncmp((const char *)prefix, kName_Itms, kLength_Itms)) &&
-			   (!strncmp((const char *)localname, kName_Artist, kLength_Artist) ||
-				!strncmp((const char *)localname, kName_Album, kLength_Album) ||
-				!strncmp((const char *)localname, kName_ReleaseDate, kLength_ReleaseDate))) ))
+			   (!strncmp((const char *)localname, kRadikoProgramXMLStationKey, kRadikoProgramXMLStationLength)))))// ||
+//				!strncmp((const char *)localname, kName_Category, kLength_Category))) ||
+//			  ((prefix != NULL && !strncmp((const char *)prefix, kName_Itms, kLength_Itms)) &&
+//			   (!strncmp((const char *)localname, kName_Artist, kLength_Artist) ||
+//				!strncmp((const char *)localname, kName_Album, kLength_Album) ||
+//				!strncmp((const char *)localname, kName_ReleaseDate, kLength_ReleaseDate))) ))
 	{
-		guide.storingCharacters = YES;
+		guide.isStoringCharacter = YES;
 	}
 }
 
@@ -227,10 +280,8 @@ static void	endElementSAX(void *ctx,
 						  const xmlChar *prefix, 
 						  const xmlChar *URI)
 {
-	NSLog(@"end element: %s", localname);
-
 	RDRadikoProgramGuide *guide = (RDRadikoProgramGuide *)ctx;
-	if (guide.parsingASong == NO)
+	if (guide.isParsingStation == NO)
 	{
 		return;
 	}
@@ -239,33 +290,63 @@ static void	endElementSAX(void *ctx,
 	{
 		if (!strncmp((const char *)localname, kRadikoProgramXMLStationKey, kRadikoProgramXMLStationLength))
 		{
-			[guide finishedCurrentSong];
+			[guide finishedCurrentStation];
 			guide.isParsingStation = NO;
 		}
-		else if (!strncmp((const char *)localname, kName_Title, kLength_Title))
+		else if (!strncmp((const char *)localname, kRadikoProgramXMLNameKey, kRadikoProgramXMLNameLength))
 		{
-			guide.currentStation.title = [guide currentString];
+			guide.currentStation.name = [guide currentString];
 		}
-		else if (!strncmp((const char *)localname, kName_Category, kLength_Category))
+		else if (!strncmp((const char *)localname, kRadikoProgramXMLProgKey, kRadikoProgramXMLProgLength))
 		{
-			guide.currentStation.category = [guide currentString];
+			[guide finishedCurrentProgram];
+			guide.isParsingProgram = NO;
+		}
+		else if (!strncmp((const char *)localname, kRadikoProgramXMLTitleKey, kRadikoProgramXMLTitleLength))
+		{
+			guide.currentProgram.title = [guide currentString];
+		}
+		else if (!strncmp((const char *)localname, kRadikoProgramXMLSubtitleKey, kRadikoProgramXMLSubtitleLength))
+		{
+			guide.currentProgram.subtitle = [guide currentString];
+		}
+		else if (!strncmp((const char *)localname, kRadikoProgramXMLPfmKey, kRadikoProgramXMLPfmLength))
+		{
+			guide.currentProgram.performer = [guide currentString];
+		}
+		else if (!strncmp((const char *)localname, kRadikoProgramXMLDescKey, kRadikoProgramXMLDescLength))
+		{
+			guide.currentProgram.description = [guide currentString];
+		}
+		else if (!strncmp((const char *)localname, kRadikoProgramXMLUrlKey, kRadikoProgramXMLUrlLength))
+		{
+			guide.currentProgram.URL = [guide currentString];
+		}
+		else if (!strncmp((const char *)localname, kRadikoProgramXMLInfoKey, kRadikoProgramXMLInfoLength))
+		{
+			guide.currentProgram.information = [guide currentString];
 		}
 	}
-	else if (!strncmp((const char *)prefix, kName_Itms, kLength_Itms))
-	{
-		if (!strncmp((const char *)localname, kName_Artist, kLength_Artist))
-		{
-			guide.currentStation.artist = [guide currentString];
-		}
-		else if (!strncmp((const char *)localname, kName_Album, kLength_Album))
-		{
-			guide.currentStation.album = [guide currentString];
-		}
-		else if (!strncmp((const char *)localname, kName_ReleaseDate, kLength_ReleaseDate))
-		{
-		}
-	}
-	parser.storingCharacters = NO;
+//	else if (!strncmp((const char *)prefix, kName_Itms, kLength_Itms))
+//	{
+//		if (!strncmp((const char *)localname, kName_Artist, kLength_Artist))
+//		{
+//			guide.currentStation.artist = [guide currentString];
+//		}
+//		else if (!strncmp((const char *)localname, kName_Album, kLength_Album))
+//		{
+//			guide.currentStation.album = [guide currentString];
+//		}
+//		else if (!strncmp((const char *)localname, kName_ReleaseDate, kLength_ReleaseDate))
+//		{
+//		}
+//	}
+	guide.isStoringCharacter = NO;
+}
+
+static void	cdataBlockSAX(void * ctx, const xmlChar * value, int len)
+{
+	NSLog(@"cdata: %s", value);
 }
 
 /*
@@ -273,18 +354,18 @@ static void	endElementSAX(void *ctx,
  */
 static void	charactersFoundSAX(void *ctx, const xmlChar *ch, int len)
 {
-	NSLog(@"characters: %s", ch);
+//	NSLog(@"characters: %s", ch);
 	
 	RDRadikoProgramGuide *guide = (RDRadikoProgramGuide *)ctx;
-//	
-//	// A state variable, "storingCharacters", is set when nodes of interest begin and end. 
-//	// This determines whether character data is handled or ignored. 
-//	if (guide.storingCharacters == NO)
-//	{
-//		return;
-//	}
-//	
-//	[guide appendCharacters:(const char *)ch length:len];
+	
+	// A state variable, "storingCharacters", is set when nodes of interest begin and end. 
+	// This determines whether character data is handled or ignored. 
+	if (guide.isStoringCharacter == NO)
+	{
+		return;
+	}
+	
+	[guide appendCharacters:(const char *)ch length:len];
 }
 
 /*
