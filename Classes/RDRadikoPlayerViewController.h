@@ -11,11 +11,19 @@
 #import "RDRadikoProgramGuide.h"
 
 
-@interface RDRadikoPlayerViewController : UIViewController <UITableViewDelegate, RDRadikoProgramGuideDelegate>
+@class RDRadikoAreaInformation;
+
+@interface RDRadikoPlayerViewController : UIViewController 
+		<UITableViewDelegate, UITableViewDataSource, RDRadikoProgramGuideDelegate>
 {
 	UIActivityIndicatorView *mSpinner;
+	UITableView *mLineupView;
+	UIView *mPlayerView;
 	
+	RDRadikoAreaInformation *mAreaInformation;
 	RDRadikoProgramGuide *mProgramGuide;
+	
+	NSMutableArray *mLineups;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;

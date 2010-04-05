@@ -2,7 +2,7 @@
 //  RDRadikoStation.m
 //  RadikoPlayer
 //
-//  Created by 石田 一博 on 10/03/29.
+//  Created by 石田 一博 on 10/04/04.
 //  Copyright 2010 Apple Inc. All rights reserved.
 //
 
@@ -13,25 +13,38 @@
 
 @synthesize stationID = mStationID;
 @synthesize name = mName;
-@synthesize date = mDate;
-@synthesize programs = mPrograms;
+@synthesize link = mLink;
+@synthesize logoXSmall = mLogoXSmall;
+@synthesize logoSmall = mLogoSmall;
+@synthesize logoMedium = mLogoMedium;
+@synthesize logoLarge = mLogoLarge;
+@synthesize feed = mFeed;
+@synthesize banner = mBanner;
 
 - (id)init
 {
 	if (self = [super init])
 	{
-		mPrograms = [[NSMutableArray alloc] initWithCapacity:0];
+		// do nothing
 	}
 	
 	return self;
 }
 
+
 - (void)dealloc
 {
 	[mStationID release];
 	[mName release];
-	[mDate release];
-	[mPrograms release];
+	[mLink release];
+	[mLogoXSmall release];
+	[mLogoSmall release];
+	[mLogoMedium release];
+	[mLogoLarge release];
+	[mFeed release];
+	[mBanner release];
+	
+	[super dealloc];
 }
 
 @end

@@ -7,17 +7,19 @@
 //
 
 #import "RDRadikoPlayerViewController.h"
+#import "RDRadikoAreaInformation.h"
 #import "RDRadikoProgramGuide.h"
+#import "RDRadikoStationTableViewCell.h"
 
 
-static const NSString * const kRadikoURL = @"http://radiko.jp/";
-static NSString * const kRadikoStationParam = @"station";
+static NSString * const kRadikoStationTableViewCellIdentifier = @"StationCell";
+
 
 
 @interface RDRadikoPlayerViewController (CreateViews)
 
 - (void)loadPlayingInfoView;
-- (void)loadStationInfoView;
+- (void)loadLineupInfoView;
 - (void)loadSpinner;
 - (void)showSpinner:(BOOL)show;
 
@@ -26,7 +28,7 @@ static NSString * const kRadikoStationParam = @"station";
 
 @interface RDRadikoPlayerViewController (GuideDownload)
 
-- (void)guide:(RDRadikoProgramGuide *)guide didParseStation:(RDRadikoStation *)parsedStation;
+- (void)guide:(RDRadikoProgramGuide *)guide didParseLineup:(RDRadikoLineup *)parsedLineup;
 
 @end
 
@@ -35,22 +37,25 @@ static NSString * const kRadikoStationParam = @"station";
 
 @synthesize spinner = mSpinner;
 
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
+- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle
+{
+	if (self = [super initWithNibName:nibName bundle:nibBundle])
+	{
+		// 地域コード、放送局データ取得の処理を実行ループに登録
+		mAreaInformation = [[RDRadikoAreaInformation alloc] init];
+		
+		mLineups = [[NSMutableArray alloc] initWithCapacity:0];
+	}
+	return self;
 }
-*/
+
 
 - (void)loadView
 {
 	[super loadView];
 	
 	[self loadPlayingInfoView];
-	[self loadStationInfoView];
+	[self loadLineupInfoView];
 	
 	[self loadSpinner];
 }
@@ -74,7 +79,7 @@ static NSString * const kRadikoStationParam = @"station";
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	NSURL *url = [NSURL URLWithString:@"http://radiko.jp/epg/epgapi.php?area_id=JP27&mode=now"];
+	NSURL *url = [NSURL URLWithString:@"http://radiko.jp/epg/epgapi.php?area_id=JP13&mode=now"];
 	mProgramGuide = [[RDRadikoProgramGuide alloc] initWithURL:url];
 	mProgramGuide.delegate = self;
 }
@@ -82,12 +87,11 @@ static NSString * const kRadikoStationParam = @"station";
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	[self showSpinner:YES];
+	[self showSpinner:NO];
 	
-	// 地域コード、放送局データ取得の処理を実行ループに登録
-	NSString *stationXML = [self downloadStationInfo];
-	NSLog(@"station information: %@", stationXML);
-	
+//	// 地域コード、放送局データ取得の処理を実行ループに登録
+//	mAreaInformation = [[RDRadikoAreaInformation alloc] init];
+//	
 	[mProgramGuide start];
 }
 
@@ -113,6 +117,54 @@ static NSString * const kRadikoStationParam = @"station";
     [super dealloc];
 }
 
+
+#pragma mark UITableViewDataSource method
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	NSLog(@"station count: %d", [mAreaInformation.stations count]);
+	return [mAreaInformation.stations count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	RDRadikoStationTableViewCell *cell = 
+	(RDRadikoStationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kRadikoStationTableViewCellIdentifier];
+	if (nil == cell)
+	{
+		cell = [[RDRadikoStationTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+												   reuseIdentifier:kRadikoStationTableViewCellIdentifier];
+	}
+	
+	RDRadikoStation *station = [mAreaInformation.stations objectAtIndex:indexPath.row];
+	if (indexPath.row < [mLineups count])
+	{
+		RDRadikoLineup *lineup = [mLineups objectAtIndex:indexPath.row];
+		NSLog(@"station id: %@, lineup id: %@", station.stationID, lineup.stationID);
+		if ([lineup.stationID isEqualToString:station.stationID])
+		{
+			RDRadikoProgram *program = [lineup.programs objectAtIndex:0];
+			cell.date = lineup.date;
+			cell.title = program.title;
+			cell.performer = program.performer;
+		}
+	}
+	NSURL *url = [NSURL URLWithString:station.logoLarge];
+	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+	NSURLResponse *response = nil;
+	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+	cell.logo = [UIImage imageWithData:data];
+	
+	return cell;
+}
+
 @end
 
 
@@ -121,19 +173,25 @@ static NSString * const kRadikoStationParam = @"station";
 - (void)loadPlayingInfoView
 {
 	UIView *playingView = [[[UIView alloc] init] autorelease];
-	playingView.frame = CGRectMake(0.0, 0.0, 320.0, 128.0);
+	playingView.frame = CGRectMake(0.0, 0.0, 320.0, 123.0);
 	playingView.backgroundColor = [UIColor lightGrayColor];
+	
+	mPlayerView = playingView;
 	
 	[self.view addSubview:playingView];
 }
 
 
-- (void)loadStationInfoView
+- (void)loadLineupInfoView
 {
 	UITableView *stationView = [[[UITableView alloc] init] autorelease];
-	stationView.frame = CGRectMake(0.0, 128.0, 320.0, 288.0);
+	stationView.frame = CGRectMake(0.0, 123.0, 320.0, 288.0);
 	stationView.delegate = self;
+	stationView.dataSource = self;
 	stationView.rowHeight = 72.0;
+	stationView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	
+	mLineupView = stationView;
 	
 	[self.view addSubview:stationView];
 }
@@ -145,7 +203,7 @@ static NSString * const kRadikoStationParam = @"station";
 	
 	// オブジェクト生成
 	spinner = [[[UIActivityIndicatorView alloc] 
-				initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
+				initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
 	// フレームの設定
 	spinner.frame = [UIScreen mainScreen].bounds;
 	// スピナーの位置を中心に設定
@@ -176,43 +234,13 @@ static NSString * const kRadikoStationParam = @"station";
 @end
 
 
-
 @implementation RDRadikoPlayerViewController (GuideDownload)
 
-- (NSString *)downloadStationInfo
+- (void)guide:(RDRadikoProgramGuide *)guide didParseLineup:(RDRadikoLineup *)parsedLineup
 {
-	// Note:
-	//   Safari on Mac OS Xからのリクエスト
-	//     GET /station/ HTTP/1.1
-	//     Host: radiko.jp
-	//     Pragma: no-cache
-	//     Accept: application/xml, text/xml, */*
-	//     Cache-Control: no-cache
-	//     Referer: http://radiko.jp/
-	//     Expires: Thu, 01 Jan 1970 00:00:00 GMT
-	//     X-Requested-With: XMLHttpRequest
-	//     Accept-Language: ja-jp
-	//     Accept-Encoding: gzip, deflate
-	//     Connection: keep-alive
+	[mLineups addObject:parsedLineup];
 	
-	NSString *URLString = [kRadikoURL stringByAppendingString:kRadikoStationParam];
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:URLString]];
-	[request addValue:@"no-cache" forHTTPHeaderField:@"Pragma"];
-	[request addValue:@"application/xml, text/xml, */*" forHTTPHeaderField:@"Accept"];
-	[request addValue:@"no-cache" forHTTPHeaderField:@"Cache-Control"];
-	[request addValue:@"ja-jp" forHTTPHeaderField:@"Accept-Language"];
-	[request addValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
-	[request addValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
-	
-	NSURLResponse *response = nil;
-	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-	
-	return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (void)guide:(RDRadikoProgramGuide *)guide didParseStation:(RDRadikoStation *)parsedStation
-{
-	
+	[mLineupView reloadData];
 }
 
 @end

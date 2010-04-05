@@ -26,4 +26,7 @@
 @property (nonatomic, retain) NSString *URL;
 @property (nonatomic, retain) NSString *information;
 
+- (id)init;
+- (void)dealloc;
+
 @end

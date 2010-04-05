@@ -1,6 +1,6 @@
 
 #import "RDRadikoProgramGuide.h"
-#import "RDRadikoStation.h"
+#import "RDRadikoLineup.h"
 #import "RDRadikoProgram.h"
 
 
@@ -15,7 +15,7 @@ static xmlSAXHandler simpleSAXHandlerStruct;
 @interface RDRadikoProgramGuide (PrivateMethod)
 
 - (void)processOfParsing:(NSURL *)aURL;
-- (void)finishedCurrentStation;
+- (void)finishedCurrentLineup;
 - (void)finishedCurrentProgram;
 - (void)appendCharacters:(const char *)charactersFound length:(NSInteger)length;
 - (NSString *)currentString;
@@ -26,14 +26,14 @@ static xmlSAXHandler simpleSAXHandlerStruct;
 @implementation RDRadikoProgramGuide
 
 @synthesize delegate = mDelegate;
-@synthesize currentStation = mCurrentStation;
+@synthesize currentLineup = mCurrentLineup;
 @synthesize currentProgram = mCurrentProgram;
-@synthesize isParsingStation;
+@synthesize isParsingLineup;
 @synthesize isParsingProgram;
 @synthesize isParsingDone;
 @synthesize isStoringCharacter;
 
-- (void)initWithURL:(NSURL *)aURL
+- (id)initWithURL:(NSURL *)aURL
 {
 	if (self = [super init])
 	{
@@ -41,16 +41,30 @@ static xmlSAXHandler simpleSAXHandlerStruct;
 		
 		mURL = [aURL retain];
 	}
+	
+	return self;
 }
 
 
 - (void)start
 {
 	[[NSURLCache sharedURLCache] removeAllCachedResponses];
-	mStations = [NSMutableArray array];
+	mLineups = [NSMutableArray array];
 	
 	// launch a thread for parsing XML
 	[NSThread detachNewThreadSelector:@selector(processOfParsing:) toTarget:self withObject:mURL];
+}
+
+
+- (void)dealloc
+{
+	[mCharacterData release];
+	[mLineups release];
+	[mURL release];
+	[mCurrentLineup release];
+	[mCurrentProgram release];
+	
+	[super dealloc];
 }
 
 #pragma mark NSURLConnection Delegate methods
@@ -124,12 +138,12 @@ static const NSUInteger kAutoreleasePoolPurgeFrequency = 20;
 }
 
 
-- (void)finishedCurrentStation
+- (void)finishedCurrentLineup
 {
-//	[self performSelectorOnMainThread:@selector(parsedSong:) withObject:currentSong waitUntilDone:NO];
+	[self performSelectorOnMainThread:@selector(parsedLineup:) withObject:self.currentLineup waitUntilDone:NO];
 	// performSelectorOnMainThread: will retain the object until the selector has been performed
 	// setting the local reference to nil ensures that the local reference will be released
-	self.currentStation = nil;
+	self.currentLineup = nil;
 //	countOfParsedSongs++;
 //	// Periodically purge the autorelease pool. The frequency of this action may need to be tuned according to the 
 //	// size of the objects being parsed. The goal is to keep the autorelease pool from growing too large, but 
@@ -145,21 +159,17 @@ static const NSUInteger kAutoreleasePoolPurgeFrequency = 20;
 
 - (void)finishedCurrentProgram
 {
-	[self printProgram];
-	[self.currentStation.programs addObject:self.currentProgram];
+	[self.currentLineup.programs addObject:self.currentProgram];
 	self.currentProgram = nil;
 }
 
-- (void)printProgram
+
+- (void)parsedLineup:(RDRadikoLineup *)lineup
 {
-	RDRadikoProgram *program = self.currentProgram;
-	
-	NSLog(@"title: %@", program.title);
-	NSLog(@"subtitle: %@", program.subtitle);
-	NSLog(@"performer: %@", program.performer);
-	NSLog(@"description: %@", program.description);
-	NSLog(@"URL: %@", program.URL);
-	NSLog(@"information: %@", program.information);
+	if ([self.delegate respondsToSelector:@selector(guide:didParseLineup:)])
+	{
+		[self.delegate guide:self didParseLineup:lineup];
+	}
 }
 
 /*
@@ -188,6 +198,8 @@ static const NSUInteger kAutoreleasePoolPurgeFrequency = 20;
 // The lengths include the null terminator, to ensure exact matches.
 static const char *kRadikoProgramXMLStationKey = "station";
 static const NSUInteger kRadikoProgramXMLStationLength = 8;
+static const char *kRadikoProgramXMLStationIDKey = "id";
+static const NSUInteger kRadikoProgramXMLStationIDLength = 3;
 static const char *kRadikoProgramXLMScdKey = "scd";
 static const NSUInteger kRadikoProgramXMLScdLength = 4;
 static const char *kRadikoProgramXMLNameKey = "name";
@@ -233,13 +245,25 @@ static void startElementSAX(void *ctx,
 	{
 		if (!strncmp((const char *)localname, kRadikoProgramXMLStationKey, kRadikoProgramXMLStationLength))
 		{
-			RDRadikoStation *newStation = [[RDRadikoStation alloc] init];
-			guide.currentStation = newStation;
-			[newStation release];
+			RDRadikoLineup *newLineup = [[RDRadikoLineup alloc] init];
+			for (int index = 0; index < nb_attributes; index++)
+			{
+				if (strncmp((const char *)&attributes[index], kRadikoProgramXMLStationIDKey, kRadikoProgramXMLStationIDLength) > 0)
+				{
+					const xmlChar *valueBegin = attributes[index*5+3];
+					const xmlChar *valueEnd = attributes[index*5+4];
+					NSString *value = [[NSString alloc] initWithBytes:valueBegin 
+																	  length:(valueEnd - valueBegin) 
+																	 encoding:NSUTF8StringEncoding];
+					newLineup.stationID = value;
+				}
+			}
+			guide.currentLineup = newLineup;
+			[newLineup release];
 			
-			guide.isParsingStation = YES;
+			guide.isParsingLineup = YES;
 		}
-		else if (guide.isParsingStation)
+		else if (guide.isParsingLineup)
 		{
 			if (!strncmp((const char *)localname, kRadikoProgramXMLProgKey, kRadikoProgramXMLProgLength))
 			{
@@ -255,7 +279,7 @@ static void startElementSAX(void *ctx,
 			}
 		}
 	}
-	else if (guide.isParsingStation && 
+	else if (guide.isParsingLineup && 
 			 ((prefix == NULL && 
 			   (!strncmp((const char *)localname, kRadikoProgramXMLStationKey, kRadikoProgramXMLStationLength)))))// ||
 //				!strncmp((const char *)localname, kName_Category, kLength_Category))) ||
@@ -281,7 +305,7 @@ static void	endElementSAX(void *ctx,
 						  const xmlChar *URI)
 {
 	RDRadikoProgramGuide *guide = (RDRadikoProgramGuide *)ctx;
-	if (guide.isParsingStation == NO)
+	if (guide.isParsingLineup == NO)
 	{
 		return;
 	}
@@ -290,12 +314,12 @@ static void	endElementSAX(void *ctx,
 	{
 		if (!strncmp((const char *)localname, kRadikoProgramXMLStationKey, kRadikoProgramXMLStationLength))
 		{
-			[guide finishedCurrentStation];
-			guide.isParsingStation = NO;
+			[guide finishedCurrentLineup];
+			guide.isParsingLineup = NO;
 		}
 		else if (!strncmp((const char *)localname, kRadikoProgramXMLNameKey, kRadikoProgramXMLNameLength))
 		{
-			guide.currentStation.name = [guide currentString];
+			guide.currentLineup.name = [guide currentString];
 		}
 		else if (!strncmp((const char *)localname, kRadikoProgramXMLProgKey, kRadikoProgramXMLProgLength))
 		{
@@ -331,22 +355,17 @@ static void	endElementSAX(void *ctx,
 //	{
 //		if (!strncmp((const char *)localname, kName_Artist, kLength_Artist))
 //		{
-//			guide.currentStation.artist = [guide currentString];
+//			guide.currentLineup.artist = [guide currentString];
 //		}
 //		else if (!strncmp((const char *)localname, kName_Album, kLength_Album))
 //		{
-//			guide.currentStation.album = [guide currentString];
+//			guide.currentLineup.album = [guide currentString];
 //		}
 //		else if (!strncmp((const char *)localname, kName_ReleaseDate, kLength_ReleaseDate))
 //		{
 //		}
 //	}
 	guide.isStoringCharacter = NO;
-}
-
-static void	cdataBlockSAX(void * ctx, const xmlChar * value, int len)
-{
-	NSLog(@"cdata: %s", value);
 }
 
 /*

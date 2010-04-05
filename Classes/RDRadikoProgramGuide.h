@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <libxml/tree.h>
 
+#import "RDRadikoLineup.h"
+#import "RDRadikoProgram.h"
+
 
 @protocol RDRadikoProgramGuideDelegate;
-
-
-@class RDRadikoStation;
-@class RDRadikoProgram;
 
 
 @interface RDRadikoProgramGuide : NSObject
@@ -25,26 +24,30 @@
 
 	NSMutableData *mCharacterData;
 	
-	NSMutableDictionary *mStations;
+	NSMutableDictionary *mLineups;
 	
 	NSURL *mURL;
 	
 	BOOL isParsingDone;
 	BOOL isStoringCharacter;
-	BOOL isParsingStation;
+	BOOL isParsingLineup;
 	BOOL isParsingProgram;
 	
-	RDRadikoStation *mCurrentStation;
+	RDRadikoLineup *mCurrentLineup;
 	RDRadikoProgram *mCurrentProgram;
 }
 
 @property (nonatomic, assign) id<RDRadikoProgramGuideDelegate> delegate;
-@property (nonatomic, retain) RDRadikoStation *currentStation;
+@property (nonatomic, retain) RDRadikoLineup *currentLineup;
 @property (nonatomic, retain) RDRadikoProgram *currentProgram;
 @property (nonatomic, assign) BOOL isParsingDone;
 @property (nonatomic, assign) BOOL isStoringCharacter;
-@property (nonatomic, assign) BOOL isParsingStation;
+@property (nonatomic, assign) BOOL isParsingLineup;
 @property (nonatomic, assign) BOOL isParsingProgram;
+
+- (id)initWithURL:(NSURL *)aURL;
+- (void)start;
+- (void)dealloc;
 
 @end
 
@@ -54,6 +57,6 @@
 @optional
 - (void)guideDidEndParsingData:(RDRadikoProgramGuide *)guide;
 - (void)guide:(RDRadikoProgramGuide *)guide didFailWithError:(NSError *)error;
-- (void)guide:(RDRadikoProgramGuide *)guide didParseStation:(RDRadikoStation *)parsedStation;
+- (void)guide:(RDRadikoProgramGuide *)guide didParseLineup:(RDRadikoLineup *)parsedLineup;
 
 @end

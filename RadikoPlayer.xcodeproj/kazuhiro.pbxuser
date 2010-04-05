@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* RDRadikoPlayerAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 474}}";
-			sepNavSelRange = "{167, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 445}}";
+			sepNavSelRange = "{302, 0}";
 			sepNavVisRange = "{0, 425}";
 		};
 	};
 	1D3623250D0F684500981E51 /* RDRadikoPlayerAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 825}}";
+			sepNavIntBoundsRect = "{{0, 0}, {949, 825}}";
 			sepNavSelRange = "{744, 0}";
-			sepNavVisRange = "{425, 1163}";
+			sepNavVisRange = "{425, 1145}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* RadikoPlayer */ = {
@@ -22,16 +22,17 @@
 	};
 	28D7ACF60DDB3853001CB0EB /* RDRadikoPlayerViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 474}}";
-			sepNavSelRange = "{381, 6}";
-			sepNavVisRange = "{0, 468}";
+			sepNavIntBoundsRect = "{{0, 0}, {949, 498}}";
+			sepNavSelRange = "{574, 0}";
+			sepNavVisRange = "{0, 649}";
+			sepNavWindowFrame = "{{15, 4}, {750, 774}}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* RDRadikoPlayerViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 3309}}";
-			sepNavSelRange = "{2087, 0}";
-			sepNavVisRange = "{1581, 751}";
+			sepNavIntBoundsRect = "{{0, 0}, {949, 3528}}";
+			sepNavSelRange = "{4934, 0}";
+			sepNavVisRange = "{4642, 699}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -54,7 +55,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					833,
+					771,
 					20,
 					48,
 					43,
@@ -71,29 +72,35 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 291817725;
-			PBXWorkspaceStateSaveDate = 291817725;
+			PBXPerProjectTemplateStateSaveDate = 292163956;
+			PBXWorkspaceStateSaveDate = 292163956;
 		};
 		perUserProjectItems = {
+			3016B6A4116A1CCA002E23D1 /* PBXTextBookmark */ = 3016B6A4116A1CCA002E23D1 /* PBXTextBookmark */;
+			3016B6A7116A1CCA002E23D1 /* PBXTextBookmark */ = 3016B6A7116A1CCA002E23D1 /* PBXTextBookmark */;
+			3016B6A8116A1CCA002E23D1 /* PBXTextBookmark */ = 3016B6A8116A1CCA002E23D1 /* PBXTextBookmark */;
+			3016B6AD116A1CCA002E23D1 /* PBXTextBookmark */ = 3016B6AD116A1CCA002E23D1 /* PBXTextBookmark */;
+			3016B6BC116A1D87002E23D1 /* PBXTextBookmark */ = 3016B6BC116A1D87002E23D1 /* PBXTextBookmark */;
+			3016B6D9116A1F57002E23D1 /* PBXTextBookmark */ = 3016B6D9116A1F57002E23D1 /* PBXTextBookmark */;
+			3016B6DF116A2024002E23D1 /* PBXTextBookmark */ = 3016B6DF116A2024002E23D1 /* PBXTextBookmark */;
+			3016B6E0116A2024002E23D1 /* PBXTextBookmark */ = 3016B6E0116A2024002E23D1 /* PBXTextBookmark */;
+			3016B6E1116A2024002E23D1 /* PBXTextBookmark */ = 3016B6E1116A2024002E23D1 /* PBXTextBookmark */;
+			3016B6EB116A2268002E23D1 /* PBXTextBookmark */ = 3016B6EB116A2268002E23D1 /* PBXTextBookmark */;
+			3016B70B116A3342002E23D1 /* PBXTextBookmark */ = 3016B70B116A3342002E23D1 /* PBXTextBookmark */;
+			3016B70C116A3342002E23D1 /* PBXTextBookmark */ = 3016B70C116A3342002E23D1 /* PBXTextBookmark */;
+			3016B70D116A3342002E23D1 /* PBXTextBookmark */ = 3016B70D116A3342002E23D1 /* PBXTextBookmark */;
+			3016B726116A3471002E23D1 /* PBXTextBookmark */ = 3016B726116A3471002E23D1 /* PBXTextBookmark */;
 			308951521153CBF7008CBBB4 /* PBXTextBookmark */ = 308951521153CBF7008CBBB4 /* PBXTextBookmark */;
-			30B0AEBC1164EAF800026E16 /* PBXTextBookmark */ = 30B0AEBC1164EAF800026E16 /* PBXTextBookmark */;
-			30B0AEBD1164EAF800026E16 /* PBXTextBookmark */ = 30B0AEBD1164EAF800026E16 /* PBXTextBookmark */;
-			30B0AEBE1164EAF800026E16 /* PBXTextBookmark */ = 30B0AEBE1164EAF800026E16 /* PBXTextBookmark */;
 			30B0AEC81164EAF800026E16 /* PBXTextBookmark */ = 30B0AEC81164EAF800026E16 /* PBXTextBookmark */;
 			30B0AEE31164EFE600026E16 /* PBXTextBookmark */ = 30B0AEE31164EFE600026E16 /* PBXTextBookmark */;
-			30B0AEE41164EFE600026E16 /* PBXTextBookmark */ = 30B0AEE41164EFE600026E16 /* PBXTextBookmark */;
-			30B0AEE51164EFE600026E16 /* PBXTextBookmark */ = 30B0AEE51164EFE600026E16 /* PBXTextBookmark */;
-			30B0AEE61164EFE600026E16 /* PBXTextBookmark */ = 30B0AEE61164EFE600026E16 /* PBXTextBookmark */;
 			30B0AEE71164EFE600026E16 /* PBXTextBookmark */ = 30B0AEE71164EFE600026E16 /* PBXTextBookmark */;
 			30B0AEE81164EFE600026E16 /* PBXTextBookmark */ = 30B0AEE81164EFE600026E16 /* PBXTextBookmark */;
 			30B0AEE91164EFE600026E16 /* PBXTextBookmark */ = 30B0AEE91164EFE600026E16 /* PBXTextBookmark */;
-			30B0AEEA1164EFE600026E16 /* PBXTextBookmark */ = 30B0AEEA1164EFE600026E16 /* PBXTextBookmark */;
-			30B0AEEB1164EFE600026E16 /* PBXTextBookmark */ = 30B0AEEB1164EFE600026E16 /* PBXTextBookmark */;
-			30B0AEEC1164EFE600026E16 /* PBXTextBookmark */ = 30B0AEEC1164EFE600026E16 /* PBXTextBookmark */;
 			30B0AEED1164EFE600026E16 /* PBXTextBookmark */ = 30B0AEED1164EFE600026E16 /* PBXTextBookmark */;
-			30B0AEEE1164EFE600026E16 /* PBXTextBookmark */ = 30B0AEEE1164EFE600026E16 /* PBXTextBookmark */;
-			30B0AEEF1164EFE600026E16 /* PBXTextBookmark */ = 30B0AEEF1164EFE600026E16 /* PBXTextBookmark */;
-			30B0AEF01164EFE600026E16 /* PBXTextBookmark */ = 30B0AEF01164EFE600026E16 /* PBXTextBookmark */;
+			30C2DFA5116876960066E0A6 /* PBXTextBookmark */ = 30C2DFA5116876960066E0A6 /* PBXTextBookmark */;
+			30C2DFAE116876960066E0A6 /* PBXTextBookmark */ = 30C2DFAE116876960066E0A6 /* PBXTextBookmark */;
+			30C2DFFC11687E8A0066E0A6 /* PBXTextBookmark */ = 30C2DFFC11687E8A0066E0A6 /* PBXTextBookmark */;
+			30C2E0F41168C7C30066E0A6 /* PBXTextBookmark */ = 30C2E0F41168C7C30066E0A6 /* PBXTextBookmark */;
 			30D3103A115A615600AF44D7 /* PBXTextBookmark */ = 30D3103A115A615600AF44D7 /* PBXTextBookmark */;
 			30D3103D115A615600AF44D7 /* PlistBookmark */ = 30D3103D115A615600AF44D7 /* PlistBookmark */;
 		};
@@ -108,32 +115,172 @@
 			sepNavVisRange = "{0, 377}";
 		};
 	};
-	3073668C1160F1D90030B157 /* RDRadikoStation.h */ = {
+	3016B6A4116A1CCA002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 30C2DF8311686B380066E0A6 /* RDRadikoStation.h */;
+		name = "RDRadikoStation.h: 20";
+		rLen = 11;
+		rLoc = 298;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 208;
+	};
+	3016B6A7116A1CCA002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 30C2DFA21168767A0066E0A6 /* RDRadikoAreaInformation.h */;
+		name = "RDRadikoAreaInformation.h: 11";
+		rLen = 0;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 585;
+		vrLoc = 0;
+	};
+	3016B6A8116A1CCA002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307366901160F2FC0030B157 /* RDRadikoProgram.m */;
+		name = "RDRadikoProgram.m: 28";
+		rLen = 0;
+		rLoc = 463;
+		rType = 0;
+		vrLen = 525;
+		vrLoc = 25;
+	};
+	3016B6AD116A1CCA002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 30C2E06D1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.h */;
+		name = "RDRadikoStationTableViewCell.h: 26";
+		rLen = 0;
+		rLoc = 581;
+		rType = 0;
+		vrLen = 848;
+		vrLoc = 0;
+	};
+	3016B6BC116A1D87002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 308951001153B48C008CBBB4 /* RDRadikoProgramGuide.h */;
+		name = "RDRadikoProgramGuide.h: 18";
+		rLen = 0;
+		rLoc = 296;
+		rType = 0;
+		vrLen = 537;
+		vrLoc = 138;
+	};
+	3016B6D9116A1F57002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 30C2DF8411686B380066E0A6 /* RDRadikoStation.m */;
+		name = "RDRadikoStation.m: 14";
+		rLen = 0;
+		rLoc = 197;
+		rType = 0;
+		vrLen = 486;
+		vrLoc = 162;
+	};
+	3016B6DF116A2024002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* RDRadikoPlayerViewController.m */;
+		name = "RDRadikoPlayerViewController.m: 150";
+		rLen = 0;
+		rLoc = 3492;
+		rType = 0;
+		vrLen = 1136;
+		vrLoc = 2917;
+	};
+	3016B6E0116A2024002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3073668C1160F1D90030B157 /* RDRadikoLineup.h */;
+		name = "RDRadikoLineup.h: 14";
+		rLen = 0;
+		rLoc = 230;
+		rType = 0;
+		vrLen = 533;
+		vrLoc = 0;
+	};
+	3016B6E1116A2024002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3073668D1160F1D90030B157 /* RDRadikoLineup.m */;
+		name = "RDRadikoLineup.m: 14";
+		rLen = 0;
+		rLoc = 194;
+		rType = 0;
+		vrLen = 406;
+		vrLoc = 162;
+	};
+	3016B6EB116A2268002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 30C2DFA31168767A0066E0A6 /* RDRadikoAreaInformation.m */;
+		name = "RDRadikoAreaInformation.m: 230";
+		rLen = 0;
+		rLoc = 7253;
+		rType = 0;
+		vrLen = 838;
+		vrLoc = 7027;
+	};
+	3016B70B116A3342002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 308951011153B48C008CBBB4 /* RDRadikoProgramGuide.m */;
+		name = "RDRadikoProgramGuide.m: 16";
+		rLen = 0;
+		rLoc = 656;
+		rType = 0;
+		vrLen = 1094;
+		vrLoc = 8077;
+	};
+	3016B70C116A3342002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 30C2E06E1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.m */;
+		name = "RDRadikoStationTableViewCell.m: 73";
+		rLen = 0;
+		rLoc = 1861;
+		rType = 0;
+		vrLen = 439;
+		vrLoc = 1643;
+	};
+	3016B70D116A3342002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* RDRadikoPlayerViewController.h */;
+		name = "RDRadikoPlayerViewController.h: 26";
+		rLen = 0;
+		rLoc = 574;
+		rType = 0;
+		vrLen = 649;
+		vrLoc = 0;
+	};
+	3016B726116A3471002E23D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* RDRadikoPlayerViewController.m */;
+		name = "RDRadikoPlayerViewController.m: 206";
+		rLen = 0;
+		rLoc = 4934;
+		rType = 0;
+		vrLen = 699;
+		vrLoc = 4642;
+	};
+	3073668C1160F1D90030B157 /* RDRadikoLineup.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 474}}";
-			sepNavSelRange = "{294, 0}";
-			sepNavVisRange = "{0, 512}";
+			sepNavIntBoundsRect = "{{0, 0}, {949, 444}}";
+			sepNavSelRange = "{230, 0}";
+			sepNavVisRange = "{0, 533}";
 		};
 	};
-	3073668D1160F1D90030B157 /* RDRadikoStation.m */ = {
+	3073668D1160F1D90030B157 /* RDRadikoLineup.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 573}}";
-			sepNavSelRange = "{319, 0}";
-			sepNavVisRange = "{134, 416}";
+			sepNavIntBoundsRect = "{{0, 0}, {949, 618}}";
+			sepNavSelRange = "{194, 0}";
+			sepNavVisRange = "{162, 406}";
 		};
 	};
 	3073668F1160F2FC0030B157 /* RDRadikoProgram.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 453}}";
-			sepNavSelRange = "{210, 0}";
-			sepNavVisRange = "{79, 570}";
+			sepNavIntBoundsRect = "{{0, 0}, {949, 498}}";
+			sepNavSelRange = "{672, 0}";
+			sepNavVisRange = "{0, 679}";
 		};
 	};
 	307366901160F2FC0030B157 /* RDRadikoProgram.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 426}}";
-			sepNavSelRange = "{162, 0}";
-			sepNavVisRange = "{0, 405}";
+			sepNavIntBoundsRect = "{{0, 0}, {949, 648}}";
+			sepNavSelRange = "{463, 0}";
+			sepNavVisRange = "{25, 525}";
 		};
 	};
 	308950ED1153B21C008CBBB4 /* RadikoPlayer */ = {
@@ -184,16 +331,16 @@
 	};
 	308951001153B48C008CBBB4 /* RDRadikoProgramGuide.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 903}}";
-			sepNavSelRange = "{1293, 94}";
-			sepNavVisRange = "{485, 908}";
+			sepNavIntBoundsRect = "{{0, 0}, {949, 1068}}";
+			sepNavSelRange = "{296, 0}";
+			sepNavVisRange = "{138, 537}";
 		};
 	};
 	308951011153B48C008CBBB4 /* RDRadikoProgramGuide.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1552, 6315}}";
-			sepNavSelRange = "{951, 0}";
-			sepNavVisRange = "{0, 1104}";
+			sepNavIntBoundsRect = "{{0, 0}, {929, 6663}}";
+			sepNavSelRange = "{8584, 0}";
+			sepNavVisRange = "{8458, 530}";
 			sepNavWindowFrame = "{{15, 4}, {750, 774}}";
 		};
 	};
@@ -235,36 +382,6 @@
 			sepNavVisRange = "{0, 679}";
 		};
 	};
-	30B0AEBC1164EAF800026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3073668F1160F2FC0030B157 /* RDRadikoProgram.h */;
-		name = "RDRadikoProgram.h: 14";
-		rLen = 0;
-		rLoc = 210;
-		rType = 0;
-		vrLen = 570;
-		vrLoc = 79;
-	};
-	30B0AEBD1164EAF800026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 307366901160F2FC0030B157 /* RDRadikoProgram.m */;
-		name = "RDRadikoProgram.m: 10";
-		rLen = 0;
-		rLoc = 162;
-		rType = 0;
-		vrLen = 405;
-		vrLoc = 0;
-	};
-	30B0AEBE1164EAF800026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3073668D1160F1D90030B157 /* RDRadikoStation.m */;
-		name = "RDRadikoStation.m: 18";
-		rLen = 0;
-		rLoc = 319;
-		rType = 0;
-		vrLen = 416;
-		vrLoc = 134;
-	};
 	30B0AEC81164EAF800026E16 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 30AE3991115DB81200C76722 /* RDRadikoAudioControl.m */;
@@ -283,36 +400,6 @@
 		rLoc = 149;
 		rType = 0;
 		vrLen = 150;
-		vrLoc = 0;
-	};
-	30B0AEE41164EFE600026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* RDRadikoPlayerAppDelegate.h */;
-		name = "RDRadikoPlayerAppDelegate.h: 11";
-		rLen = 0;
-		rLoc = 167;
-		rType = 0;
-		vrLen = 425;
-		vrLoc = 0;
-	};
-	30B0AEE51164EFE600026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* RDRadikoPlayerAppDelegate.m */;
-		name = "RDRadikoPlayerAppDelegate.m: 29";
-		rLen = 0;
-		rLoc = 744;
-		rType = 0;
-		vrLen = 1163;
-		vrLoc = 425;
-	};
-	30B0AEE61164EFE600026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 308951011153B48C008CBBB4 /* RDRadikoProgramGuide.m */;
-		name = "RDRadikoProgramGuide.m: 28";
-		rLen = 0;
-		rLoc = 951;
-		rType = 0;
-		vrLen = 1104;
 		vrLoc = 0;
 	};
 	30B0AEE71164EFE600026E16 /* PBXTextBookmark */ = {
@@ -345,36 +432,6 @@
 		vrLen = 804;
 		vrLoc = 3519;
 	};
-	30B0AEEA1164EFE600026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3073668C1160F1D90030B157 /* RDRadikoStation.h */;
-		name = "RDRadikoStation.h: 17";
-		rLen = 0;
-		rLoc = 294;
-		rType = 0;
-		vrLen = 512;
-		vrLoc = 0;
-	};
-	30B0AEEB1164EFE600026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 30D3104B115A62B500AF44D7 /* RDRadikoProgramViewController.h */;
-		name = "RDRadikoProgramViewController.h: 14";
-		rLen = 0;
-		rLoc = 298;
-		rType = 0;
-		vrLen = 310;
-		vrLoc = 0;
-	};
-	30B0AEEC1164EFE600026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF60DDB3853001CB0EB /* RDRadikoPlayerViewController.h */;
-		name = "RDRadikoPlayerViewController.h: 18";
-		rLen = 6;
-		rLoc = 381;
-		rType = 0;
-		vrLen = 468;
-		vrLoc = 0;
-	};
 	30B0AEED1164EFE600026E16 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 30AE3990115DB81200C76722 /* RDRadikoAudioControl.h */;
@@ -385,35 +442,87 @@
 		vrLen = 831;
 		vrLoc = 243;
 	};
-	30B0AEEE1164EFE600026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 308951001153B48C008CBBB4 /* RDRadikoProgramGuide.h */;
-		name = "RDRadikoProgramGuide.h: 57";
-		rLen = 94;
-		rLoc = 1293;
-		rType = 0;
-		vrLen = 908;
-		vrLoc = 485;
+	30C2DF8311686B380066E0A6 /* RDRadikoStation.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {949, 723}}";
+			sepNavSelRange = "{298, 11}";
+			sepNavVisRange = "{208, 747}";
+		};
 	};
-	30B0AEEF1164EFE600026E16 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* RDRadikoPlayerViewController.m */;
-		name = "RDRadikoPlayerViewController.m: 29";
-		rLen = 0;
-		rLoc = 670;
-		rType = 0;
-		vrLen = 701;
-		vrLoc = 286;
+	30C2DF8411686B380066E0A6 /* RDRadikoStation.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {949, 753}}";
+			sepNavSelRange = "{197, 0}";
+			sepNavVisRange = "{162, 486}";
+		};
 	};
-	30B0AEF01164EFE600026E16 /* PBXTextBookmark */ = {
+	30C2DFA21168767A0066E0A6 /* RDRadikoAreaInformation.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {949, 488}}";
+			sepNavSelRange = "{204, 0}";
+			sepNavVisRange = "{0, 585}";
+		};
+	};
+	30C2DFA31168767A0066E0A6 /* RDRadikoAreaInformation.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {949, 3966}}";
+			sepNavSelRange = "{7253, 0}";
+			sepNavVisRange = "{7027, 838}";
+		};
+	};
+	30C2DFA5116876960066E0A6 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* RDRadikoPlayerViewController.m */;
-		name = "RDRadikoPlayerViewController.m: 89";
+		fRef = 30D3104B115A62B500AF44D7 /* RDRadikoProgramViewController.h */;
+		name = "RDRadikoProgramViewController.h: 14";
 		rLen = 0;
-		rLoc = 2087;
+		rLoc = 298;
 		rType = 0;
-		vrLen = 751;
-		vrLoc = 1581;
+		vrLen = 310;
+		vrLoc = 0;
+	};
+	30C2DFAE116876960066E0A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* RDRadikoPlayerAppDelegate.h */;
+		name = "RDRadikoPlayerAppDelegate.h: 16";
+		rLen = 0;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 425;
+		vrLoc = 0;
+	};
+	30C2DFFC11687E8A0066E0A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3073668F1160F2FC0030B157 /* RDRadikoProgram.h */;
+		name = "RDRadikoProgram.h: 30";
+		rLen = 0;
+		rLoc = 672;
+		rType = 0;
+		vrLen = 679;
+		vrLoc = 0;
+	};
+	30C2E06D1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {949, 543}}";
+			sepNavSelRange = "{581, 0}";
+			sepNavVisRange = "{0, 848}";
+		};
+	};
+	30C2E06E1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {949, 1578}}";
+			sepNavSelRange = "{1861, 0}";
+			sepNavVisRange = "{1643, 439}";
+		};
+	};
+	30C2E0F41168C7C30066E0A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* RDRadikoPlayerAppDelegate.m */;
+		name = "RDRadikoPlayerAppDelegate.m: 29";
+		rLen = 0;
+		rLoc = 744;
+		rType = 0;
+		vrLen = 1145;
+		vrLoc = 425;
 	};
 	30D3103A115A615600AF44D7 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -439,7 +548,7 @@
 	};
 	30D3104B115A62B500AF44D7 /* RDRadikoProgramViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 474}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 493}}";
 			sepNavSelRange = "{298, 0}";
 			sepNavVisRange = "{0, 310}";
 		};

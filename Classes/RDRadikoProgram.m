@@ -18,4 +18,27 @@
 @synthesize URL = mURL;
 @synthesize information = mInformation;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+	}
+	
+	return self;
+}
+
+
+- (void)dealloc
+{
+	[mTitle release];
+	[mSubtitle release];
+	[mPerformer release];
+	[mDescription release];
+	[mURL release];
+	[mInformation release];
+	
+	[super dealloc];
+}
+
 @end

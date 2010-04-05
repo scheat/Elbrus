@@ -13,11 +13,14 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* RDRadikoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* RDRadikoPlayerViewController.m */; };
-		3073668E1160F1D90030B157 /* RDRadikoStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3073668D1160F1D90030B157 /* RDRadikoStation.m */; };
+		3073668E1160F1D90030B157 /* RDRadikoLineup.m in Sources */ = {isa = PBXBuildFile; fileRef = 3073668D1160F1D90030B157 /* RDRadikoLineup.m */; };
 		307366911160F2FC0030B157 /* RDRadikoProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 307366901160F2FC0030B157 /* RDRadikoProgram.m */; };
 		308951021153B48C008CBBB4 /* RDRadikoProgramGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 308951011153B48C008CBBB4 /* RDRadikoProgramGuide.m */; };
 		308951051153B5B4008CBBB4 /* RDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 308951041153B5B4008CBBB4 /* RDCommon.m */; };
 		30AE3992115DB81200C76722 /* RDRadikoAudioControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AE3991115DB81200C76722 /* RDRadikoAudioControl.m */; };
+		30C2DF8511686B380066E0A6 /* RDRadikoStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C2DF8411686B380066E0A6 /* RDRadikoStation.m */; };
+		30C2DFA41168767A0066E0A6 /* RDRadikoAreaInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C2DFA31168767A0066E0A6 /* RDRadikoAreaInformation.m */; };
+		30C2E06F1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C2E06E1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.m */; };
 		30D3104D115A62B500AF44D7 /* RDRadikoProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3104C115A62B500AF44D7 /* RDRadikoProgramViewController.m */; };
 		30D31050115A62DD00AF44D7 /* RDRadikoSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3104F115A62DD00AF44D7 /* RDRadikoSettingViewController.m */; };
 		30D6951411622BF900C2AA02 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D6951311622BF900C2AA02 /* libxml2.dylib */; };
@@ -33,8 +36,8 @@
 		28D7ACF60DDB3853001CB0EB /* RDRadikoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoPlayerViewController.h; sourceTree = "<group>"; };
 		28D7ACF70DDB3853001CB0EB /* RDRadikoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoPlayerViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3073668C1160F1D90030B157 /* RDRadikoStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoStation.h; sourceTree = "<group>"; };
-		3073668D1160F1D90030B157 /* RDRadikoStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoStation.m; sourceTree = "<group>"; };
+		3073668C1160F1D90030B157 /* RDRadikoLineup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoLineup.h; sourceTree = "<group>"; };
+		3073668D1160F1D90030B157 /* RDRadikoLineup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoLineup.m; sourceTree = "<group>"; };
 		3073668F1160F2FC0030B157 /* RDRadikoProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoProgram.h; sourceTree = "<group>"; };
 		307366901160F2FC0030B157 /* RDRadikoProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoProgram.m; sourceTree = "<group>"; };
 		308951001153B48C008CBBB4 /* RDRadikoProgramGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoProgramGuide.h; sourceTree = "<group>"; };
@@ -43,6 +46,12 @@
 		308951041153B5B4008CBBB4 /* RDCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDCommon.m; sourceTree = "<group>"; };
 		30AE3990115DB81200C76722 /* RDRadikoAudioControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoAudioControl.h; sourceTree = "<group>"; };
 		30AE3991115DB81200C76722 /* RDRadikoAudioControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoAudioControl.m; sourceTree = "<group>"; };
+		30C2DF8311686B380066E0A6 /* RDRadikoStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoStation.h; sourceTree = "<group>"; };
+		30C2DF8411686B380066E0A6 /* RDRadikoStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoStation.m; sourceTree = "<group>"; };
+		30C2DFA21168767A0066E0A6 /* RDRadikoAreaInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoAreaInformation.h; sourceTree = "<group>"; };
+		30C2DFA31168767A0066E0A6 /* RDRadikoAreaInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoAreaInformation.m; sourceTree = "<group>"; };
+		30C2E06D1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoStationTableViewCell.h; sourceTree = "<group>"; };
+		30C2E06E1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoStationTableViewCell.m; sourceTree = "<group>"; };
 		30D3104B115A62B500AF44D7 /* RDRadikoProgramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoProgramViewController.h; sourceTree = "<group>"; };
 		30D3104C115A62B500AF44D7 /* RDRadikoProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDRadikoProgramViewController.m; sourceTree = "<group>"; };
 		30D3104E115A62DD00AF44D7 /* RDRadikoSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDRadikoSettingViewController.h; sourceTree = "<group>"; };
@@ -137,6 +146,8 @@
 				30D3104C115A62B500AF44D7 /* RDRadikoProgramViewController.m */,
 				30D3104E115A62DD00AF44D7 /* RDRadikoSettingViewController.h */,
 				30D3104F115A62DD00AF44D7 /* RDRadikoSettingViewController.m */,
+				30C2E06D1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.h */,
+				30C2E06E1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -153,10 +164,14 @@
 		30AE3A33115E380E00C76722 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				30C2DFA21168767A0066E0A6 /* RDRadikoAreaInformation.h */,
+				30C2DFA31168767A0066E0A6 /* RDRadikoAreaInformation.m */,
+				30C2DF8311686B380066E0A6 /* RDRadikoStation.h */,
+				30C2DF8411686B380066E0A6 /* RDRadikoStation.m */,
 				308951001153B48C008CBBB4 /* RDRadikoProgramGuide.h */,
 				308951011153B48C008CBBB4 /* RDRadikoProgramGuide.m */,
-				3073668C1160F1D90030B157 /* RDRadikoStation.h */,
-				3073668D1160F1D90030B157 /* RDRadikoStation.m */,
+				3073668C1160F1D90030B157 /* RDRadikoLineup.h */,
+				3073668D1160F1D90030B157 /* RDRadikoLineup.m */,
 				3073668F1160F2FC0030B157 /* RDRadikoProgram.h */,
 				307366901160F2FC0030B157 /* RDRadikoProgram.m */,
 			);
@@ -232,8 +247,11 @@
 				30D3104D115A62B500AF44D7 /* RDRadikoProgramViewController.m in Sources */,
 				30D31050115A62DD00AF44D7 /* RDRadikoSettingViewController.m in Sources */,
 				30AE3992115DB81200C76722 /* RDRadikoAudioControl.m in Sources */,
-				3073668E1160F1D90030B157 /* RDRadikoStation.m in Sources */,
+				3073668E1160F1D90030B157 /* RDRadikoLineup.m in Sources */,
 				307366911160F2FC0030B157 /* RDRadikoProgram.m in Sources */,
+				30C2DF8511686B380066E0A6 /* RDRadikoStation.m in Sources */,
+				30C2DFA41168767A0066E0A6 /* RDRadikoAreaInformation.m in Sources */,
+				30C2E06F1168AEEA0066E0A6 /* RDRadikoStationTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
